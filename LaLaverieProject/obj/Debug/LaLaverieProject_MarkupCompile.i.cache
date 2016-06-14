@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\
+C:\Users\Sebastien\Source\Repos\LaLaverie2\LaLaverieProject\obj\Debug\
 LaLaverieProject
 none
 false
 DEBUG;TRACE
-G:\c#\LaLaverieProject\LaLaverieProject\App.xaml
+C:\Users\Sebastien\Source\Repos\LaLaverie2\LaLaverieProject\App.xaml
 71546333189
-11591296592
-261752115670
-151322768284
+
+261998193502
+15-1509997261
 MainWindow.xaml;View\AjouterBiereWindow.xaml;View\ModifierBiereWindow.xaml;View\NewClientWindow.xaml;View\ClientProduitWindow.xaml;View\MainConnexionWindow.xaml;View\MainUserWindow.xaml;
 
-False
+True
 

@@ -27,3 +27,13 @@ G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.Properties.Resource
 G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.GenerateResource.Cache
 G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.exe
 G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\bin\Debug\BusinessLayer.exe.config
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\bin\Debug\BusinessLayer.exe
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\obj\Debug\App.g.cs
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\obj\Debug\BusinessLayer_MarkupCompile.cache
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\obj\Debug\BusinessLayer.Properties.Resources.resources
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\obj\Debug\BusinessLayer.csproj.GenerateResource.Cache
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\obj\Debug\BusinessLayer.exe
+C:\Users\Sebastien\Source\Repos\LaLaverie2\BusinessLayer\obj\Debug\BusinessLayer.pdb

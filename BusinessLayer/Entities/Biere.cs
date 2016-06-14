@@ -18,10 +18,6 @@ namespace BusinessLayer.Entities
         /// </summary>
         public static List<string> categories = new List<string>();
         /// <summary>
-        /// Liste de tous les types de bière
-        /// </summary>
-        public static List<string> types = new List<string>();
-        /// <summary>
         /// Liste de toutes les bières 
         /// </summary>
         public static List<Biere> bieres = new List<Biere>();
@@ -89,25 +85,6 @@ namespace BusinessLayer.Entities
                     throw new Exception("Cette catégorie de bière n'existe pas.");
                 else
                     _categorie = value;
-            }
-        }
-
-        /// <summary>
-        /// Type de la bière
-        /// </summary>
-        private string _type;
-        public string Type
-        {
-            get
-            {
-                return _type;
-            }
-            set
-            {
-                if (!types.Contains(value))
-                    throw new Exception("Ce type de bière n'existe pas.");
-                else
-                    _type = value;
             }
         }
 
@@ -317,13 +294,12 @@ namespace BusinessLayer.Entities
         /// <param name="fermentation">Description de la frmentation de la bière</param>
         /// <param name="embouteillage">Description de l'embouteillage de la bière</param>
         /// <param name="conservation">Description de la conservation de la bière</param>
-        public Biere(string nom, string categorie, string type, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation)
+        public Biere(string nom, string categorie, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation)
         {
             try
             {
                 Nom = nom;
                 Categorie = categorie;
-                Type = type;
                 Descritpion = description;
                 Alcool = alcool;
                 Amertume = amertume;

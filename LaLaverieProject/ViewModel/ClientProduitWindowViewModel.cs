@@ -69,7 +69,6 @@ namespace LaLaverieProject.ViewModel
                 new BiereModel(){
                     Nom = "Patersbier",
                     Categorie = "Rafraîchissante",
-                    Type = "Pal Ale",
                     Description = "Moelleuse avec une amertume subtile. Elle à un aspect jaune paille clair à doré léger, avec un col de mousse ferme. Son goût est crémeux et son arôme légèrement malté et houblonné. Le houblon anglais donne des notes florales. Cette bière peut être peu amère et peut avoir un goût de caramel en fin de bouche, comme forte avec des saveurs d’épices, ou encore citronnée et sèche en fin de bouche.",
                     Alcool = 5,
                     Amertume = 3,
@@ -85,7 +84,6 @@ namespace LaLaverieProject.ViewModel
                 new BiereModel (){
                     Nom = "Ale d'été",
                     Categorie = "Rafraîchissante",
-                    Type = "Bitter",
                     Description = "Son aspect est doré pâle à cuivre profond, très limpide avec une mousse légère. Son goût est plutôt amer, mais bien équilibré. Elle a parfois des saveurs caramélisées ou légèrement fruitées. Son arôme est houblonné léger avec des notes de malt et parfois de caramel. Elles peuvent parfois être un peu sèche en bouche.",
                     Alcool = 4,
                     Amertume = 5,
@@ -101,7 +99,6 @@ namespace LaLaverieProject.ViewModel
                 new BiereModel (){
                     Nom = "Biere aux fruits",
                     Categorie = "Fruitée",
-                    Type = "Fruits",
                     Description = "Cette bière me permet de tester la catéforie fruitée alors elle a un goût fort en fruits voilà.",
                     Alcool = 4,
                     Amertume = 6,

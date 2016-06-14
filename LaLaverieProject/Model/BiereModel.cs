@@ -17,10 +17,6 @@ namespace LaLaverie.Model
         /// </summary>
         public static List<string> categories = new List<string>();
         /// <summary>
-        /// Liste de tous les types de bière
-        /// </summary>
-        public static List<string> types = new List<string>();
-        /// <summary>
         /// Liste de toutes les bières 
         /// </summary>
         public static List<Biere> bieres = new List<Biere>();
@@ -93,28 +89,6 @@ namespace LaLaverie.Model
                 //{
                     _categorie = value;
                     NotifyPropertyChanged("Categorie");
-                //}
-            }
-        }
-
-        /// <summary>
-        /// Type de la bière
-        /// </summary>
-        private string _type;
-        public string Type
-        {
-            get
-            {
-                return _type;
-            }
-            set
-            {
-                //if (!types.Contains(value))
-                //    throw new Exception("Ce type de bière n'existe pas.");
-                //else
-                //{
-                    _type = value;
-                    NotifyPropertyChanged("Type");
                 //}
             }
         }
@@ -348,7 +322,6 @@ namespace LaLaverie.Model
         /// </summary>
         /// <param name="nom">Nom de la bière</param>
         /// <param name="categorie">Catégorie de la bière</param>
-        /// <param name="type">Type de la bière</param>
         /// <param name="description">Descritpion de la bière</param>
         /// <param name="alcool">Taux d'alcool de la bière</param>
         /// <param name="amertume">Amertume de la bière</param>
@@ -359,13 +332,12 @@ namespace LaLaverie.Model
         /// <param name="embouteillage">Description de l'embouteillage de la bière</param>
         /// <param name="conservation">Description de la conservation de la bière</param>
         /// <param name="nbbouteille">Nombre de bouteilles en stock </param>
-        public BiereModel(string nom, string categorie, string type, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation, string image, int nbbouteille)
+        public BiereModel(string nom, string categorie, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation, string image, int nbbouteille)
         {
             try
             {
                 Nom = nom;
                 Categorie = categorie;
-                Type = type;
                 Description = description;
                 Alcool = alcool;
                 Amertume = amertume;

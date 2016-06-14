@@ -12,105 +12,43 @@
             <Setter Property="Foreground" Value="#3F3F3F"/>
         </Style>
         <Style TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#3F3F3F"/>
             <Setter Property="Height" Value="20"/>
             <Setter Property="Width" Value="300"/>
         </Style>
         <Style TargetType="ListBox">
-            <Setter Property="Height" Value="273"/>
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#3F3F3F"/>
+            <Setter Property="Height" Value="280"/>
             <Setter Property="Width" Value="300"/>
         </Style>
         <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Background" Value="#3F3F3F"/>
             <Setter Property="Margin" Value="20,0,20,0" />
             <Setter Property="Height" Value="40"/>
             <Setter Property="Width" Value="200" />
             <Setter Property="BorderBrush" Value="#3f3f3f"/>
             <Setter Property="Cursor" Value="Hand"/>
         </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="recette">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="128" />
-            <Setter Property="Height" Value="128" />
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Content">
-                <Setter.Value>
-                    <Image Source="Images/Recette.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="home">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="128" />
-            <Setter Property="Height" Value="128" />
-            <Setter Property="Content">
-                <Setter.Value>
-                    <Image Source="Images/House.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="retour">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="128" />
-            <Setter Property="Height" Value="128" />
-            <Setter Property="Content">
-                <Setter.Value>
-                    <Image Source="Images/Exit.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="produits">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="128" />
-            <Setter Property="Height" Value="128" />
-            <Setter Property="Content">
-                <Setter.Value>
-                    <Image Source="Images/Bouteille.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="panier">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="128" />
-            <Setter Property="Height" Value="128" />
-            <Setter Property="Content">
-                <Setter.Value>
-                    <Image Source="Images/Commande.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="profil">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="128" />
-            <Setter Property="Height" Value="128" />
-            <Setter Property="Content">
-                <Setter.Value>
-                    <Image Source="Images/Profil.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="achats">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="128" />
-            <Setter Property="Height" Value="128" />
-            <Setter Property="Content">
-                <Setter.Value>
-                    <Image Source="Images/Diable.png"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#3F3F3F"/>
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Height" Value="40" />
             <Setter Property="Width" Value="200" />
             <Setter Property="BorderBrush" Value="#3f3f3f"/>
         </Style>
-        <Style TargetType="StackPanel" x:Key="StackPanelBoutons">
-            <Setter Property="Orientation" Value="Vertical"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox" x:Key="attribut">
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="40"/>
         </Style>
         <!--#endregion-->
         
@@ -122,7 +60,12 @@
             <Setter Property="Foreground" Value="#3F3F3F"/>
             <Setter Property="Margin" Value="75,180,0,0"/>
         </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="mainButton">
+            <Setter Property="Width" Value="600"/>
+            <Setter Property="Height" Value="780"/>
+            <Setter Property="Opacity" Value="0"/>
+        </Style>
+        <!--#endregion-->
 
         <!--#region MainUserWindow--> 
         <Style TargetType="StackPanel" x:Key="stackPanelUser">
@@ -130,174 +73,15 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="Height" Value="40" />
         </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
+        <!--#endregion-->
 
-        <!--#region NewClientWindow-->
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="validerNewClient">
-            <Setter Property="Height" Value="30" />
+        <!--#region AjouterBiereWindow-->
+        <Style TargetType="ColumnDefinition" x:Key="columnLabel">
+            <Setter Property="Width" Value="100"/>
         </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
-
-        <!--#region ProducteurMainWindow-->
-        <Style TargetType="StackPanel" x:Key="stackPanelHorizontal">
-            <Setter Property="Orientation" Value="Horizontal"/>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5,0,0,0"/>
         </Style>
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="deconnexion">
-            <Setter Property="Width" Value="296"/>
-        </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
-
-        <!--#region ProducteurProduitWindow-->
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="petitBouton">
-            <Setter Property="Margin" Value="20,20,20,20" />
-            <Setter Property="Width" Value="280"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="titre">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="36"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="rubrique">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="TextDecorations" Value="Underline"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="horizontal">
-            <Setter Property="Orientation" Value="Horizontal"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="vertical">
-            <Setter Property="Orientation" Value="Vertical"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type StackPanel}}" TargetType="StackPanel" x:Key="boutons">
-            <Setter Property="Orientation" Value="Horizontal"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="stackRubrique">
-            <Setter Property="Orientation" Value="Horizontal"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-        </Style>
-        <Style TargetType="Image" x:Key="imageRubrique">
-            <Setter Property="Margin" Value="30"/>
-        </Style>
-        <Style TargetType="TextBox" x:Key="quantite">
-            <Setter Property="Width" Value="170"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="BorderBrush" Value="#3f3f3f"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type ListBox}}" TargetType="ListBox" x:Key="listeProduit">
-            <Setter Property="Width" Value="200"/>
-        </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
-
-        <!--#region ProducteurRecetteWindow-->
-        <Style TargetType="ListBox" x:Key="listeIngredient">
-            <Setter Property="Height" Value="460"/>
-            <Setter Property="Width" Value="300"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="listePourIngredient">
-            <Setter Property="Orientation" Value="Vertical"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="20"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="texteRecette">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="rubriqueRecette">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="TextDecorations" Value="Underline"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="descriptionRecette">
-            <Setter Property="Orientation" Value="Vertical"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="horizontalTitre">
-            <Setter Property="Orientation" Value="Horizontal"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="quantiteRecette">
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Orientation" Value="Horizontal"/>
-        </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
-
-        <!--#region ProducteurStockWindow-->
-        <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="ComboBox" x:Key="categorieStock">
-            <Setter Property="Width" Value="200"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type ListBox}}" TargetType="ListBox" x:Key="listeStock">
-            <Setter Property="Height" Value="355"/>
-            <Setter Property="Width" Value="200"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="quantiteStockSelected">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
-
-        <!--#region ProducteurProfilWindow-->
-        <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="ComboBox" x:Key="categorieProfil">
-            <Setter Property="Width" Value="200"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type ListBox}}" TargetType="ListBox" x:Key="listeProfil">
-            <Setter Property="Height" Value="355"/>
-            <Setter Property="Width" Value="200"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="nomClient">
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
-
-        <!--#region ProducteurModifierStockWindox-->
-        <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="ComboBox" x:Key="categorieModifStock">
-            <Setter Property="Width" Value="200"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type ListBox}}" TargetType="ListBox" x:Key="listeModifStock">
-            <Setter Property="Height" Value="355"/>
-            <Setter Property="Width" Value="200"/>
-        </Style>
-
-        <!--#endregion--> <!-- Problème de design possible -->
-
-        <!--#region ProducteurModifierProduitWindow-->
-        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="modifierProduit">
-            <Setter Property="Width" Value="1000"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Key="StackPanelListeModifProduit">
-            <Setter Property="Orientation" Value="Vertical"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="20" />
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="ComboBox" x:Key="categorieModifProduit">
-            <Setter Property="Width" Value="280"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type ListBox}}" TargetType="ListBox" x:Key="listeModifProduit">
-            <Setter Property="Height" Value="273"/>
-            <Setter Property="Width" Value="280"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type ListBox}}" TargetType="ListBox" x:Key="listeModifIngredients">
-            <Setter Property="Height" Value="400"/>
-        </Style>
-        <Style TargetType="TextBox" x:Key="dosage">
-            <Setter Property="Height" Value="20"/>
-            <Setter Property="Width" Value="200"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="Margin" Value="0,10,0,0"/>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox" x:Key="modifProduitDescription">
-            <Setter Property="Height" Value="60"/>
-            <Setter Property="Width" Value="650"/>
-        </Style>
-        <!--#endregion--> <!-- Problème de design possible -->
+        <!--#endregion-->
     </Application.Resources>
 </Application>

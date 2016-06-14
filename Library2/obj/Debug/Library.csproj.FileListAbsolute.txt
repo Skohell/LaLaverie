@@ -12,3 +12,8 @@ G:\c#\LaLaverieProject\Library2\bin\Debug\Library2.dll
 G:\c#\LaLaverieProject\Library2\bin\Debug\Library2.pdb
 G:\c#\LaLaverieProject\Library2\obj\Debug\Library2.dll
 G:\c#\LaLaverieProject\Library2\obj\Debug\Library2.pdb
+C:\Users\Sebastien\Source\Repos\LaLaverie2\Library2\bin\Debug\Library2.dll
+C:\Users\Sebastien\Source\Repos\LaLaverie2\Library2\bin\Debug\Library2.pdb
+C:\Users\Sebastien\Source\Repos\LaLaverie2\Library2\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Sebastien\Source\Repos\LaLaverie2\Library2\obj\Debug\Library2.dll
+C:\Users\Sebastien\Source\Repos\LaLaverie2\Library2\obj\Debug\Library2.pdb

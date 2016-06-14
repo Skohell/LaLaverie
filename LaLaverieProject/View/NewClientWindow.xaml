@@ -31,6 +31,6 @@
         <TextBox Grid.Row="7" Name="CodePostalClient" Text="{Binding client.CodePostal}"/>
         <TextBox Grid.Row="8" Name="Mail" Text="{Binding client.Mail}"/>
         <TextBox Grid.Row="9" Name="MotDePasse" Text="{Binding client.MotDePasse}"/>
-        <Button Grid.Row="10" Name="ValiderNewClient" Style="{DynamicResource validerNewClient}" Content="Valider" Command="{Binding OnNewClientCommand}"/>
+        <Button Grid.Row="10" Name="ValiderNewClient" Content="Valider" Command="{Binding OnNewClientCommand}"/>
     </Grid>
 </Window>

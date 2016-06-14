@@ -28,6 +28,6 @@
             </TextBlock.Triggers>
         </TextBlock>
 
-        <Button Opacity="0" Height="780" Width="600" Command="{Binding OnClickCommand}"/>
+        <Button Command="{Binding OnClickCommand}" Style="{DynamicResource mainButton}"/>
     </Grid>
 </Window>
