@@ -1,0 +1,29 @@
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\obj\Debug\App.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer_MarkupCompile.cache
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.Properties.Resources.resources
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.GenerateResource.Cache
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.exe.config
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.exe
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.exe
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.exe.config
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.exe
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\obj\Debug\App.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer_MarkupCompile.cache
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.Properties.Resources.resources
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.GenerateResource.Cache
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.exe
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+G:\c#\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.exe.config
+G:\c#\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.exe
+G:\c#\LaLaverieProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\App.g.cs
+G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer_MarkupCompile.cache
+G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.Properties.Resources.resources
+G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.GenerateResource.Cache
+G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.exe
+G:\c#\LaLaverieProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
