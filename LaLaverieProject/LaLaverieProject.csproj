@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D551054B-98AD-4D6E-AA07-4C541A6B8FF1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LaLaverieProject</RootNamespace>
+    <AssemblyName>LaLaverieProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\BiereModel.cs" />
+    <Compile Include="Model\ClientModel.cs" />
+    <Compile Include="Model\StockModel.cs" />
+    <Compile Include="Model\TransactionModel.cs" />
+    <Compile Include="ViewModel\AjouterBiereWindowViewModel.cs" />
+    <Compile Include="ViewModel\ClientProduitWindowViewModel.cs" />
+    <Compile Include="ViewModel\MainConnexionWindowViewModel.cs" />
+    <Compile Include="ViewModel\MainUserWindowViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\ModifierBiereWindowViewModel.cs" />
+    <Compile Include="ViewModel\NewClientWindowViewModel.cs" />
+    <Compile Include="View\AjouterBiereWindow.xaml.cs">
+      <DependentUpon>AjouterBiereWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifierBiereWindow.xaml.cs">
+      <DependentUpon>ModifierBiereWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewClientWindow.xaml.cs">
+      <DependentUpon>NewClientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClientProduitWindow.xaml.cs">
+      <DependentUpon>ClientProduitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainConnexionWindow.xaml.cs">
+      <DependentUpon>MainConnexionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainUserWindow.xaml.cs">
+      <DependentUpon>MainUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\AjouterBiereWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifierBiereWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewClientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClientProduitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainConnexionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Titre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Achat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Panier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bouteille.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Profil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\House.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Recette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alcool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Houblon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Quantite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\QuantiteVoulue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PanierTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Diable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Commande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{B025C424-14A7-41C3-ABE6-37C3FFAAC42C}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library2\Library.csproj">
+      <Project>{e8300817-376e-4ef4-a08c-ea11b43a3320}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Videos\301.avi" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
