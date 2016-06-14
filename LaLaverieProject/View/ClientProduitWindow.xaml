@@ -1,0 +1,167 @@
+﻿<Window x:Class="LaLaverieProject.View.ClientProduitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaLaverieProject.View"
+        mc:Ignorable="d"
+        Background="{DynamicResource WindowBrush}"
+        Title="La Laverie - Produits" Height="780" Width="1000">
+    <Window.Resources>
+        <SolidColorBrush x:Key="WindowBrush" Color="#AD9E82"/>
+        <Style TargetType="Window">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#3F3F3F"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20,20,20,20" />
+            <Setter Property="Width" Value="128" />
+            <Setter Property="Height" Value="128" />
+            <Setter Property="BorderBrush" Value="#3f3f3f"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="petitBouton">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="panier">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="../Images/PanierTop.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="home">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="../Images/House.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="titre">
+            <Setter Property="FontSize" Value="36"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="rubrique">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="horizontal">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="vertical">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="liste">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="boutons">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="stackRubrique">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Height" Value="273"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
+        <Style TargetType="Image" x:Key="imageRubrique">
+            <Setter Property="Margin" Value="30"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="quantite">
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="169"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="138"/>
+            <RowDefinition Height="138"/>
+            <RowDefinition Height="138"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="Bienvenue"/>
+            <Label Content="{Binding client.Nom}"/>
+            <Label Content="!"/>
+        </DockPanel>
+        <StackPanel Grid.ColumnSpan="3" Style="{DynamicResource horizontal}">
+
+            <Image Source="../Images/Titre.png"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding SelectedBiere.Nom}" Style="{DynamicResource titre}"/>
+
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding SelectedBiere.Description}"/> 
+
+        <StackPanel Grid.Row="3" Grid.RowSpan="2" Style="{DynamicResource liste}">
+            <ComboBox ItemsSource="{Binding ListeCategorie}" SelectedItem="{Binding SelectedCategorie}" Background="red"/>
+            <ListBox ItemsSource="{Binding ListeBieres}" SelectedItem="{Binding SelectedBiere}" Background="#FFE5E5E5"/>
+        </StackPanel>
+
+        <Image Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Source="{Binding SelectedBiere.ImageUrl}" />
+
+        <StackPanel Grid.Column="2" Grid.Row="3" Style="{DynamicResource stackRubrique}">
+            <Image Source="../Images/Alcool.png" Style="{DynamicResource imageRubrique}"/>
+            <StackPanel Style="{DynamicResource vertical}">
+                <TextBlock Text="Alcool" Style="{DynamicResource rubrique}"/>
+                <TextBlock Text="{Binding SelectedBiere.Alcool}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="4" Style="{DynamicResource stackRubrique}">
+            <Image Source="../Images/Houblon.png" Style="{DynamicResource imageRubrique}"/>
+            <StackPanel Style="{DynamicResource vertical}">
+                <TextBlock Text="Amertume" Style="{DynamicResource rubrique}"/>
+                <TextBlock Text="{Binding SelectedBiere.Amertume}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="5" Style="{DynamicResource stackRubrique}">
+            <Image Source="../Images/Quantite.png" Style="{DynamicResource imageRubrique}"/>
+            <StackPanel Style="{DynamicResource vertical}">
+                <TextBlock Text="Quantité disponible" Style="{DynamicResource rubrique}"/>
+                <TextBlock Text="{Binding SelectedBiere.NbBouteille}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="5" Style="{DynamicResource stackRubrique}">
+            <Image Source="../Images/QuantiteVoulue.png" Style="{DynamicResource imageRubrique}"/>
+            <StackPanel Style="{DynamicResource vertical}">
+                <TextBlock Text="Prix" Style="{DynamicResource rubrique}"/>
+                <TextBlock Text="{Binding SelectedBiere.Prix}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="5" >
+            <Button Margin="0,0,0,5" Content="Ajouter une bière" Style="{DynamicResource petitBouton}" Command="{Binding OnAddCommand}"/>
+            <Button Margin="0,0,0,5" Content="Modifier la bière" Style="{DynamicResource petitBouton}" Command="{Binding OnEditCommand}"/>
+            <Button Margin="0,0,0,5" Content="Supprimer la bière" Style="{DynamicResource petitBouton}" Command="{Binding OnDeleteCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>
