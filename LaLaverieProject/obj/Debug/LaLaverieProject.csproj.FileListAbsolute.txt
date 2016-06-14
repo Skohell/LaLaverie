@@ -1,0 +1,140 @@
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.exe.config
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.exe
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.pdb
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.csprojResolveAssemblyReference.cache
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\MainWindow.g.cs
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\App.g.cs
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_MarkupCompile.cache
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_MarkupCompile.lref
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\MainWindow.baml
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.g.resources
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.Properties.Resources.resources
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.csproj.GenerateResource.Cache
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.exe
+c:\users\sebastien\documents\visual studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.pdb
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\UserWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ConnexionWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\UserWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ConnexionWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\NewUserWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\NewUserWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientMainWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientModifieProfilWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProduitWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProfilWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientMainWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientModifieProfilWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProduitWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProfilWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurProduitWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurProduitWindow.baml
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurMainWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\RecetteWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientPanierWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientAchatWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ModifierClientWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurModifierStockWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurAjouterStockWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurStockWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurProfilWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurModifierProduitWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurAjouterProduitWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientModifierProfilWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainConnexionWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\AjouterClientWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurRecetteWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainUserWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\View\NewClientWindow.g.cs
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_Content.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.exe.config
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.exe
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.csprojResolveAssemblyReference.cache
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\MainWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientPanierWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientAchatWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ModifierClientWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\NewClientWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurModifierStockWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurAjouterStockWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurStockWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurProfilWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurModifierProduitWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurAjouterProduitWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurMainWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientMainWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientModifierProfilWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProduitWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurProduitWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProfilWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainConnexionWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\AjouterClientWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurRecetteWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainUserWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\App.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_Content.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_MarkupCompile.cache
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_MarkupCompile.lref
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.exe
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\bin\Debug\BusinessLayer.exe
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\bin\Debug\Library2.dll
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\bin\Debug\BusinessLayer.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\bin\Debug\Library2.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\MainWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientPanierWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientAchatWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ModifierClientWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\NewClientWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurModifierStockWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurAjouterStockWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurStockWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurProfilWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurModifierProduitWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurAjouterProduitWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurMainWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientMainWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientModifierProfilWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProduitWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurProduitWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProfilWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainConnexionWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\AjouterClientWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\ProducteurRecetteWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainUserWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.g.resources
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.Properties.Resources.resources
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.csproj.GenerateResource.Cache
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\LaLaverieProject\obj\Debug\App.baml
+G:\c#\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.exe.config
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.exe
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.pdb
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.csprojResolveAssemblyReference.cache
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\MainWindow.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\NewClientWindow.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProduitWindow.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainConnexionWindow.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainUserWindow.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\App.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_Content.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_MarkupCompile.cache
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject_MarkupCompile.lref
+G:\c#\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.exe
+G:\c#\LaLaverieProject\LaLaverieProject\bin\Debug\LaLaverieProject.pdb
+G:\c#\LaLaverieProject\LaLaverieProject\bin\Debug\BusinessLayer.exe
+G:\c#\LaLaverieProject\LaLaverieProject\bin\Debug\Library2.dll
+G:\c#\LaLaverieProject\LaLaverieProject\bin\Debug\BusinessLayer.pdb
+G:\c#\LaLaverieProject\LaLaverieProject\bin\Debug\Library2.pdb
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\App.baml
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\MainWindow.baml
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\NewClientWindow.baml
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\ClientProduitWindow.baml
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainConnexionWindow.baml
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\MainUserWindow.baml
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.g.resources
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.Properties.Resources.resources
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\LaLaverieProject.csproj.GenerateResource.Cache
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\AjouterBiereWindow.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\AjouterBiereWindow.baml
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\ModifierBiereWindow.g.cs
+G:\c#\LaLaverieProject\LaLaverieProject\obj\Debug\View\ModifierBiereWindow.baml
