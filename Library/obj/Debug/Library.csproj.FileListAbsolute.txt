@@ -1,0 +1,6 @@
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library\obj\Debug\Library.csproj.GenerateResource.Cache

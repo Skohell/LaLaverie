@@ -1,0 +1,14 @@
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library2\bin\Debug\Library2.dll
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library2\bin\Debug\Library2.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library2\obj\Debug\Library2.dll
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library2\obj\Debug\Library2.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverieProject\Library2\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library2\bin\Debug\Library2.dll
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library2\bin\Debug\Library2.pdb
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library2\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library2\obj\Debug\Library2.dll
+C:\Users\Sebastien\Documents\Visual Studio 2015\Projects\LaLaverieProject\Library2\obj\Debug\Library2.pdb
+G:\c#\LaLaverieProject\Library2\bin\Debug\Library2.dll
+G:\c#\LaLaverieProject\Library2\bin\Debug\Library2.pdb
+G:\c#\LaLaverieProject\Library2\obj\Debug\Library2.dll
+G:\c#\LaLaverieProject\Library2\obj\Debug\Library2.pdb
