@@ -11,31 +11,35 @@
             <Setter Property="FontFamily" Value="Segoe Print"/>
             <Setter Property="Foreground" Value="#3F3F3F"/>
         </Style>
-        <Style TargetType="ComboBox">
-            <Setter Property="FontFamily" Value="Segoe Print"/>
-            <Setter Property="Foreground" Value="#3F3F3F"/>
-            <Setter Property="Height" Value="20"/>
-            <Setter Property="Width" Value="300"/>
-        </Style>
-        <Style TargetType="ListBox">
-            <Setter Property="FontFamily" Value="Segoe Print"/>
-            <Setter Property="Foreground" Value="#3F3F3F"/>
-            <Setter Property="Height" Value="280"/>
-            <Setter Property="Width" Value="300"/>
-        </Style>
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="Segoe Print"/>
             <Setter Property="Background" Value="#3F3F3F"/>
+            <Setter Property="Foreground" Value="#AD9E82"/>
             <Setter Property="Margin" Value="20,0,20,0" />
             <Setter Property="Height" Value="40"/>
             <Setter Property="Width" Value="200" />
             <Setter Property="BorderBrush" Value="#3f3f3f"/>
             <Setter Property="Cursor" Value="Hand"/>
         </Style>
-        <Style TargetType="TextBlock">
+        <Style TargetType="TextBlock" x:Key="txt">
             <Setter Property="FontFamily" Value="Segoe Print"/>
             <Setter Property="Foreground" Value="#F0F0F0"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="client">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+            <Setter Property="TextBlock.RenderTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="325"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="-100,80,0,0"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Segoe Print"/>
@@ -47,13 +51,19 @@
             <Setter Property="BorderBrush" Value="#3f3f3f"/>
         </Style>
         <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox" x:Key="attribut">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
             <Setter Property="Width" Value="250"/>
             <Setter Property="Height" Value="40"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="vertical">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
         <!--#endregion-->
         
         <!--#region MainWindow-->
         <Style TargetType="TextBlock" x:Key="loading">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
             <Setter Property="FontSize" Value="25"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -61,6 +71,7 @@
             <Setter Property="Margin" Value="75,180,0,0"/>
         </Style>
         <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="mainButton">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
             <Setter Property="Width" Value="600"/>
             <Setter Property="Height" Value="780"/>
             <Setter Property="Opacity" Value="0"/>
@@ -80,7 +91,57 @@
             <Setter Property="Width" Value="100"/>
         </Style>
         <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
             <Setter Property="Margin" Value="5,0,0,0"/>
+        </Style>
+        <!--#endregion-->
+        
+        <!--#region ClientProduitWindow-->
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="titre">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="rubrique">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="description">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="horizontal">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="liste">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="stackRubrique">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
+        <Style TargetType="ComboBox" x:Key="categorieBiere">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
+        <Style TargetType="ListBox" x:Key="listeBiere">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Height" Value="273"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Background" Value="#F0F0F0"/>
+        </Style>
+        <Style TargetType="Image" x:Key="imageRubrique">
+            <Setter Property="Margin" Value="30"/>
         </Style>
         <!--#endregion-->
     </Application.Resources>

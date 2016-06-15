@@ -155,27 +155,6 @@
     <Resource Include="Images\MainPage.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Achat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Panier.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Bouteille.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Profil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\House.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Recette.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\image.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -188,18 +167,6 @@
     <Resource Include="Images\Quantite.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\QuantiteVoulue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\PanierTop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Diable.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Commande.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
       <Project>{B025C424-14A7-41C3-ABE6-37C3FFAAC42C}</Project>
       <Name>BusinessLayer</Name>
@@ -208,6 +175,9 @@
       <Project>{e8300817-376e-4ef4-a08c-ea11b43a3320}</Project>
       <Name>Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Prix.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

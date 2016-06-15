@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("videos/301.avi")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/prix.png")]
 
 
