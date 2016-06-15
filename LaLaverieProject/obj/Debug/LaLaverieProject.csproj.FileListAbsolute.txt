@@ -202,3 +202,5 @@ C:\Users\DarkFury\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\LaLaveriePro
 C:\Users\DarkFury\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\LaLaverieProject.csproj.GenerateResource.Cache
 C:\Users\DarkFury\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\View\ClientProfilWindow.g.cs
 C:\Users\DarkFury\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\View\ClientProfilWindow.baml
+C:\Users\Sebastien\Source\Repos\LaLaverie2\LaLaverieProject\obj\Debug\View\ClientProfilWindow.g.cs
+C:\Users\Sebastien\Source\Repos\LaLaverie2\LaLaverieProject\obj\Debug\View\ClientProfilWindow.baml

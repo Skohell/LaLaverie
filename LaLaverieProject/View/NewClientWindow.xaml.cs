@@ -24,11 +24,16 @@ namespace LaLaverieProject.View
     {
         private NewClientWindowViewModel _viewModel;
 
+        ScrollViewer viewer;
+
         public NewClientWindow(ObservableCollection<ClientModel> ListeClient)
         {
             _viewModel = new NewClientWindowViewModel(ListeClient, this);
             InitializeComponent();
             DataContext = _viewModel;
+
+            viewer = new ScrollViewer();
+            viewer.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
         }
     }
 }

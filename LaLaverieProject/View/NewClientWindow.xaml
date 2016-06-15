@@ -6,31 +6,60 @@
         xmlns:local="clr-namespace:LaLaverieProject.View"
         mc:Ignorable="d"
         Background="{DynamicResource WindowBrush}"
-        Title="La Laverie - Nouveau client" MaxHeight="800" MaxWidth="300" MinHeight="800" MinWidth="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="169"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-        </Grid.RowDefinitions>
-        <Image Source="../Images/Titre.png"/>
-        <TextBox Grid.Row="1" Name="NomClient" Text="{Binding client.Nom}"/>
-        <TextBox Grid.Row="2" Name="PrenomClient" Text="{Binding client.Prenom}"/>
-        <TextBox Grid.Row="3" Name="Age" Text="{Binding client.Age}"/>
-        <TextBox Grid.Row="4" Name="NumClient" Text="{Binding client.NumeroRue}"/>
-        <TextBox Grid.Row="5" Name="RueClient" Text="{Binding client.Rue}"/>
-        <TextBox Grid.Row="6" Name="VilleClient" Text="{Binding client.Ville}"/>
-        <TextBox Grid.Row="7" Name="CodePostalClient" Text="{Binding client.CodePostal}"/>
-        <TextBox Grid.Row="8" Name="Mail" Text="{Binding client.Mail}"/>
-        <TextBox Grid.Row="9" Name="MotDePasse" Text="{Binding client.MotDePasse}"/>
-        <Button Grid.Row="10" Name="ValiderNewClient" Content="Valider" Command="{Binding OnNewClientCommand}"/>
-    </Grid>
+        Title="La Laverie - Nouveau client" MaxHeight="800" MaxWidth="400" MinHeight="800" MinWidth="400">
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="169"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{DynamicResource columnLabel}"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.ColumnSpan="2" Source="../Images/Titre.png"/>
+
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="Patronyme" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="2" Content="Nom"/>
+            <Label Grid.Row="3" Content="Prénom"/>
+            <Label Grid.Row="4" Content="Age"/>
+            <TextBox Grid.Column="1" Grid.Row="2"  Text="{Binding client.Nom}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="3"  Text="{Binding  client.Prenom}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="4"  Text="{Binding  client.Prenom}" Style="{DynamicResource attribut}"/>
+
+            <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Text="Adresse" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="6" Content="Numéro rue"/>
+            <Label Grid.Row="7" Content="Rue"/>
+            <Label Grid.Row="8" Content="Code postal"/>
+            <Label Grid.Row="9" Content="Ville"/>
+            <TextBox Grid.Column="1" Grid.Row="6"  Text="{Binding  client.NumeroRue}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="7"  Text="{Binding  client.Rue}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="8"  Text="{Binding  client.CodePostal}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="9"  Text="{Binding  client.Ville}" Style="{DynamicResource attribut}"/>
+
+            <TextBlock Grid.Row="10" Grid.ColumnSpan="2" Text="Contact" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="11" Content="Mail"/>
+            <TextBox Grid.Column="1" Grid.Row="11"  Text="{Binding  client.Mail}" Style="{DynamicResource attribut}"/>
+
+            <TextBlock Grid.Row="12" Grid.ColumnSpan="2" Text="Sécurité" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="13" Content="Mot de passe"/>
+            <TextBox Grid.Column="1" Grid.Row="13"  Text="{Binding  client.MotDePasse}" Style="{DynamicResource attribut}"/>
+        
+            <Button Grid.Row="14" Grid.ColumnSpan="2" Name="ValiderNewClient" Content="Valider" Command="{Binding OnNewClientCommand}"/>
+        </Grid>
+    </ScrollViewer>
 </Window>

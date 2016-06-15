@@ -7,6 +7,7 @@ using Library;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace LaLaverieProject.ViewModel
         public DelegateCommand OnModifyCommand { get; set; }
         public DelegateCommand OnLogoutCommand { get; set; }
         public DelegateCommand OnSaveCommand { get; set; }
+        public DelegateCommand OnHyperLinkCommand { get; set; }
 
         private bool _isUserAdmin=false;
 
@@ -104,11 +106,24 @@ namespace LaLaverieProject.ViewModel
             OnModifyCommand = new DelegateCommand(OnModifyAction, CanExecuteModify);
             OnLogoutCommand = new DelegateCommand(OnLogoutAction, CanExecuteLogout);
             OnSaveCommand = new DelegateCommand(OnSaveAction,CanExecuteSave);
+            OnHyperLinkCommand = new DelegateCommand(OnHyperLinkAction, CanExecuteHyperLink);
 
             this.fenetre = fenetre;
 
             if (client.Nom.Equals("admin") && client.MotDePasse.Equals("admin"))
                 _isUserAdmin = true;
+        }
+
+        private bool CanExecuteHyperLink(object obj)
+        {
+            return true;
+        }
+
+        private void OnHyperLinkAction(object obj)
+        {
+            Process p = new Process();
+            p.StartInfo.FileName = "http://sebastienrico.com/accueil/";
+            p.Start();
         }
 
         private bool CanExecuteSave(object obj)

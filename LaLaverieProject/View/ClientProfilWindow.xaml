@@ -7,42 +7,57 @@
         mc:Ignorable="d"
        Background="{DynamicResource WindowBrush}"
         Title="La Laverie - Profil" MaxHeight="800" MaxWidth="400"  MinHeight="800" MinWidth="400">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="169"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Style="{DynamicResource columnLabel}"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="169"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{DynamicResource columnLabel}"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
-        <Image Grid.ColumnSpan="2" Source="../Images/Titre.png"/>
-        <Label Grid.Row="1" Content="Nom"/>
-        <Label Grid.Row="2" Content="Prénom"/>
-        <Label Grid.Row="3" Content="Numéro rue"/>
-        <Label Grid.Row="4" Content="Rue"/>
-        <Label Grid.Row="5" Content="Code postal"/>
-        <Label Grid.Row="6" Content="Ville"/>
-        <Label Grid.Row="7" Content="Mail"/>
-        <Label Grid.Row="8" Content="Mot de passe"/>
-        <TextBox Grid.Column="1" Grid.Row="1"  Text="{Binding ClientToEdit.Nom}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="2"  Text="{Binding  ClientToEdit.Prenom}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="3"  Text="{Binding  ClientToEdit.NumeroRue}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="4"  Text="{Binding  ClientToEdit.Rue}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="5"  Text="{Binding  ClientToEdit.CodePostal}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="6"  Text="{Binding  ClientToEdit.Ville}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="7"  Text="{Binding  ClientToEdit.Mail}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="8"  Text="{Binding  ClientToEdit.MotDePasse}" Style="{DynamicResource attribut}"/>
-        <Button Grid.ColumnSpan="2" Grid.Row="9" Content="Modifier" Command="{Binding OnEditCommand}"/>
-    </Grid>
+            <Image Grid.ColumnSpan="2" Source="../Images/Titre.png"/>
+
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="Patronyme" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="2" Content="Nom"/>
+            <Label Grid.Row="3" Content="Prénom"/>
+            <TextBox Grid.Column="1" Grid.Row="2"  Text="{Binding ClientToEdit.Nom}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="3"  Text="{Binding  ClientToEdit.Prenom}" Style="{DynamicResource attribut}"/>
+
+            <TextBlock Grid.Row="4" Grid.ColumnSpan="2" Text="Adresse" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="5" Content="Numéro rue"/>
+            <Label Grid.Row="6" Content="Rue"/>
+            <Label Grid.Row="7" Content="Code postal"/>
+            <Label Grid.Row="8" Content="Ville"/>
+            <TextBox Grid.Column="1" Grid.Row="5"  Text="{Binding  ClientToEdit.NumeroRue}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="6"  Text="{Binding  ClientToEdit.Rue}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="7"  Text="{Binding  ClientToEdit.CodePostal}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="8"  Text="{Binding  ClientToEdit.Ville}" Style="{DynamicResource attribut}"/>
+
+            <TextBlock Grid.Row="9" Grid.ColumnSpan="2" Text="Contact" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="10" Content="Mail"/>
+            <TextBox Grid.Column="1" Grid.Row="10"  Text="{Binding  ClientToEdit.Mail}" Style="{DynamicResource attribut}"/>
+
+            <TextBlock Grid.Row="11" Grid.ColumnSpan="2" Text="Sécurité" Style="{DynamicResource rubriqueProfil}"/>
+            <Label Grid.Row="12" Content="Mot de passe"/>
+            <TextBox Grid.Column="1" Grid.Row="12"  Text="{Binding  ClientToEdit.MotDePasse}" Style="{DynamicResource attribut}"/>
+        
+            <Button Grid.ColumnSpan="2" Grid.Row="13" Content="Modifier" Command="{Binding OnEditCommand}"/>
+        </Grid>
+    </ScrollViewer>
 </Window>
 

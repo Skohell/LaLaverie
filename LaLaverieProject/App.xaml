@@ -58,6 +58,7 @@
         <Style TargetType="StackPanel" x:Key="vertical">
             <Setter Property="Orientation" Value="Vertical"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <!--#endregion-->
         
@@ -98,6 +99,9 @@
         <!--#endregion-->
         
         <!--#region ClientProduitWindow-->
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="boutonBiereTop">
+            <Setter Property="Margin" Value="0,5,0,5"/>
+        </Style>
         <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="titre">
             <Setter Property="FontFamily" Value="Segoe Print"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -144,12 +148,31 @@
             <Setter Property="Margin" Value="30"/>
         </Style>
         <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="boutonBiere">
+            <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="0,0,0,5"/>
             <Style.Triggers>
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Opacity" Value="0"/>
                 </Trigger>
             </Style.Triggers>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="modifierProfil">
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!--#endregion-->
+        
+        <!--#region ClientProfilWindow-->
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="rubriqueProfil">
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+            <Setter Property="Margin" Value="150,0,0,0"/>
         </Style>
         <!--#endregion-->
     </Application.Resources>

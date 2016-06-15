@@ -35,8 +35,9 @@
             <Image Source="../Images/Titre.png"/>
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="center">
-                    <Button Margin="0,5,0,5" Content="Modifier profil" Command="{Binding OnModifyCommand}" />
-                    <Button Margin="0,5,0,5" Content="Déconnexion"  Command="{Binding OnLogoutCommand}"/>
+                    <Button Content="Modifier profil" Command="{Binding OnModifyCommand}" Style="{DynamicResource modifierProfil}"/>
+                    <Button Content="Déconnexion"  Command="{Binding OnLogoutCommand}" Style="{DynamicResource boutonBiereTop}"/>
+                    <Button Content="Commander en ligne" Command="{Binding OnHyperLinkCommand}" Style="{DynamicResource boutonBiereTop}"/>
                 </StackPanel>
             </DockPanel>
         </StackPanel>

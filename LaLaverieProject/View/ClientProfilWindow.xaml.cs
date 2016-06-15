@@ -23,11 +23,16 @@ namespace LaLaverieProject.View
     {
         private ClientProfilWindowViewModel _viewModel;
 
+        ScrollViewer viewer;
+
         public ClientProfilWindow(ClientModel c)
         {
             _viewModel = new ClientProfilWindowViewModel(c,this);
             InitializeComponent();
             DataContext = _viewModel;
+
+            viewer = new ScrollViewer();
+            viewer.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
         }
     }
 }

@@ -313,10 +313,6 @@ namespace LaLaverie.Model
                 }
             }
         }
-
-
-
-
         #endregion
 
         #region Constructeur
