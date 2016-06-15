@@ -143,6 +143,14 @@
         <Style TargetType="Image" x:Key="imageRubrique">
             <Setter Property="Margin" Value="30"/>
         </Style>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="boutonBiere">
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <!--#endregion-->
     </Application.Resources>
 </Application>
