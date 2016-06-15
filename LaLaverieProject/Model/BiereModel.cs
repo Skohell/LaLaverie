@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Library;
 using BusinessLayer.Entities;
+using System.Runtime.Serialization;
+using System.ComponentModel;
 
 namespace LaLaverie.Model
 {
+    
     public class BiereModel : NotifyPropertyChangedBase
     {
 
@@ -409,6 +412,8 @@ namespace LaLaverie.Model
             else
                 return string.Format("{0} bouteilles", NbBouteille);
         }
+
+
         #endregion
 
     }

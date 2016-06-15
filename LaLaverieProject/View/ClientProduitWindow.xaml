@@ -22,19 +22,25 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <DockPanel>
-            <TextBlock DockPanel.Dock="Top" Style="{DynamicResource client}">
+        <StackPanel Grid.ColumnSpan="3" Style="{DynamicResource horizontal}">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left" Style="{DynamicResource client}">
                 <Run>Bienvenue</Run>
                 <Run Text="{Binding Path=client.Prenom, Mode=OneWay}"/>
                 <LineBreak></LineBreak>
                 <Run Text="{Binding Path=client.Nom, Mode=OneWay}"/>
                 <Run> !</Run>
-            </TextBlock>
-        </DockPanel>
-
-        <StackPanel Grid.ColumnSpan="3" Style="{DynamicResource horizontal}">
+                </TextBlock>
+            </DockPanel>
             <Image Source="../Images/Titre.png"/>
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="center">
+                    <Button Margin="0,5,0,5" Content="Modifier profil" Command="{Binding OnModifyCommand}" />
+                    <Button Margin="0,5,0,5" Content="Déconnexion"  Command="{Binding OnLogoutCommand}"/>
+                </StackPanel>
+            </DockPanel>
         </StackPanel>
+        
 
         <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding SelectedBiere.Nom}" Style="{DynamicResource titre}"/>
 
@@ -83,6 +89,7 @@
             <Button Content="Ajouter une bière" Command="{Binding OnAddCommand}" Style="{DynamicResource boutonBiere}"/>
             <Button Content="Modifier la bière" Command="{Binding OnEditCommand}"  Style="{DynamicResource boutonBiere}"/>
             <Button Content="Supprimer la bière" Command="{Binding OnDeleteCommand}" Style="{DynamicResource boutonBiere}"/>
+            <Button Content="Sauvegarder" Command="{Binding OnSaveCommand}" Style="{DynamicResource boutonBiere}"/>
         </StackPanel>
     </Grid>
 </Window>

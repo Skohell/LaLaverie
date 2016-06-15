@@ -1,4 +1,7 @@
-﻿using LaLaverie.Model;
+﻿using BusinessLayer.DAO;
+using LaLaverie.Model;
+using LaLaverieProject.Factory;
+
 using LaLaverieProject.View;
 using Library;
 using System;
@@ -15,12 +18,16 @@ namespace LaLaverieProject.ViewModel
     {
         
         public ClientModel client { get; set; }
+        ClientProduitWindow fenetre;
 
         public DelegateCommand OnAddCommand { get; set; }
         private bool _isEditEnabled = true;
         public DelegateCommand OnEditCommand { get; set; }
         private bool _isDeleteEnabled = true;
         public DelegateCommand OnDeleteCommand { get; set; }
+        public DelegateCommand OnModifyCommand { get; set; }
+        public DelegateCommand OnLogoutCommand { get; set; }
+        public DelegateCommand OnSaveCommand { get; set; }
 
         private bool _isUserAdmin=false;
 
@@ -63,63 +70,30 @@ namespace LaLaverieProject.ViewModel
         }
 
 
-        public ClientProduitWindowViewModel(ClientModel client)
+        public ClientProduitWindowViewModel(ClientModel client, ClientProduitWindow fenetre)
         {
-            ListeBieres = new ObservableCollection<BiereModel>(){
-                new BiereModel(){
-                    Nom = "Patersbier",
-                    Categorie = "Rafraîchissante",
-                    Description = "Moelleuse avec une amertume subtile. Elle à un aspect jaune paille clair à doré léger, avec un col de mousse ferme. Son goût est crémeux et son arôme légèrement malté et houblonné. Le houblon anglais donne des notes florales. Cette bière peut être peu amère et peut avoir un goût de caramel en fin de bouche, comme forte avec des saveurs d’épices, ou encore citronnée et sèche en fin de bouche.",
-                    Alcool = 5,
-                    Amertume = 3,
-                    Prix = 4,
-                    Empatage = "Description de l'empatage de la Patersbier",
-                    Brassin = "Une description du brassin de la Patersbier",
-                    Fermentation = "Une description de la fermentation de la Patersbier",
-                    Embouteillage = "Une description de l'embouteillage de la Patersbier",
-                    Conservation = "Une description de la conservation de la Patersbier",
-                    ImageUrl = "https://www.eebria.com/media/products/1737/20160210110751830/450x450.jpg",
-                    NbBouteille = 42
-        },
-                new BiereModel (){
-                    Nom = "Ale d'été",
-                    Categorie = "Rafraîchissante",
-                    Description = "Son aspect est doré pâle à cuivre profond, très limpide avec une mousse légère. Son goût est plutôt amer, mais bien équilibré. Elle a parfois des saveurs caramélisées ou légèrement fruitées. Son arôme est houblonné léger avec des notes de malt et parfois de caramel. Elles peuvent parfois être un peu sèche en bouche.",
-                    Alcool = 4,
-                    Amertume = 5,
-                    Prix = 10,
-                    Empatage = "Description de l'empatage de la Ale d'été",
-                    Brassin = "Une description du brassin de la Ale d'été",
-                    Fermentation = "Une description de la fermentation de la Ale d'été",
-                    Embouteillage = "Une description de l'embouteillage de la Ale d'été",
-                    Conservation = "Une description de la conservation de la Ale d'été",
-                    ImageUrl="http://1.bp.blogspot.com/-Pmc-1EyCcx8/TY8Sw0BItZI/AAAAAAAAACo/lVB5lgoubog/s320/Sierra-Nevada-Pale-Ale.png",
-                    NbBouteille = 43
-        },
-                new BiereModel (){
-                    Nom = "Biere aux fruits",
-                    Categorie = "Fruitée",
-                    Description = "Cette bière me permet de tester la catéforie fruitée alors elle a un goût fort en fruits voilà.",
-                    Alcool = 4,
-                    Amertume = 6,
-                    Prix = 8,
-                    Empatage = "Description de l'empatage ",
-                    Brassin = "Une description du brassin ",
-                    Fermentation = "Une description de la fermentation ",
-                    Embouteillage = "Une description de l'embouteillage ",
-                    Conservation = "Une description de la conservation ",
-                    ImageUrl="http://2.bp.blogspot.com/-Zbj5vhll92I/UmQXDyTDvbI/AAAAAAABMwQ/HcuYbCrnv1w/s640/Capture+d%E2%80%99e%CC%81cran+2013-10-20+a%CC%80+19.45.20.png",
-                    NbBouteille = 666
-        }
-
-            };
+            ListeBieres = new ObservableCollection<BiereModel>();
+           
+             try
+             {
+                 ListeBieres = BiereFactory.AllBiereToBiereModel(BiereDAO.LoadBieres());
+             }
+             catch
+             {
+                 ListeBieres.Add(new BiereModel("test", "test", "test",2,2,2, "test", "test", "test", "test", "test", "test",2));
+                 BiereDAO.SaveBieres(BiereFactory.AllBiereModelToBiere(ListeBieres));
+                 ListeBieres = BiereFactory.AllBiereToBiereModel(BiereDAO.LoadBieres());
+                ListeBieres.Clear();
+             }
+             
 
             ListeCategorie = new ObservableCollection<string>();
             ListeCategorie.Add("Toutes");
             ListeCategorie.Add("Rafraîchissante");
             ListeCategorie.Add("Fruitée");
 
-            SelectedBiere = ListeBieres.First();
+            if(ListeBieres.Count()>0)
+                SelectedBiere = ListeBieres.First();
             SelectedCategorie = ListeCategorie.First();
 
             this.client = client;
@@ -127,11 +101,53 @@ namespace LaLaverieProject.ViewModel
             OnAddCommand = new DelegateCommand(OnAddAction, CanExecuteAdd);
             OnDeleteCommand = new DelegateCommand(OnDeleteAction, CanExecuteDelete);
             OnEditCommand = new DelegateCommand(OnEditAction, CanExecuteEdit);
+            OnModifyCommand = new DelegateCommand(OnModifyAction, CanExecuteModify);
+            OnLogoutCommand = new DelegateCommand(OnLogoutAction, CanExecuteLogout);
+            OnSaveCommand = new DelegateCommand(OnSaveAction,CanExecuteSave);
 
-
+            this.fenetre = fenetre;
 
             if (client.Nom.Equals("admin") && client.MotDePasse.Equals("admin"))
                 _isUserAdmin = true;
+        }
+
+        private bool CanExecuteSave(object obj)
+        {
+            if (_isUserAdmin)
+                return true;
+            return false;
+        }
+
+        private void OnSaveAction(object obj)
+        {
+            BiereDAO.SaveBieres(BiereFactory.AllBiereModelToBiere(ListeBieres));
+        }
+
+        private bool CanExecuteLogout(object obj)
+        {
+            return true;
+        }
+
+        private void OnLogoutAction(object obj)
+        {
+            MainUserWindow home = new MainUserWindow();
+            home.Show();
+            fenetre.Close();
+
+        }
+
+        private bool CanExecuteModify(object obj)
+        {
+            if (_isUserAdmin)
+                return false;
+            return true;
+        }
+
+        private void OnModifyAction(object obj)
+        {
+            ClientProfilWindow profil = new ClientProfilWindow(client);
+            profil.ShowDialog();
+
         }
 
         private bool CanExecuteEdit(object obj)

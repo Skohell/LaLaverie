@@ -9,7 +9,10 @@ namespace BusinessLayer.Entities
     /// <summary>
     /// Classe représentant une Bière
     /// </summary>
-    public class Biere
+    /// 
+    
+    [Serializable]
+    public class Biere 
     {
 
         #region Listes static 
@@ -65,7 +68,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("Le nom de la bière ne peut être nul.");
                 else
+                {
                     _nom = value;
+                   
+                }
             }
         }
 
@@ -81,10 +87,13 @@ namespace BusinessLayer.Entities
             }
             set
             {
-                if (!categories.Contains(value))
-                    throw new Exception("Cette catégorie de bière n'existe pas.");
-                else
-                    _categorie = value;
+                //if (!categories.Contains(value))
+                //    throw new Exception("Cette catégorie de bière n'existe pas.");
+                //else
+                //{
+                _categorie = value;
+             
+                //}
             }
         }
 
@@ -92,7 +101,7 @@ namespace BusinessLayer.Entities
         /// Descritpion de la bière
         /// </summary>
         private string _description;
-        public string Descritpion
+        public string Description
         {
             get
             {
@@ -103,7 +112,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     _description = "Aucune description pour cette bière.";
                 else
+                {
                     _description = value;
+                 
+                }
             }
         }
 
@@ -122,7 +134,10 @@ namespace BusinessLayer.Entities
                 if (!(value >= 0 && value <= 100))
                     throw new Exception("Le taux d'alcool doit être compris entre 0 et 100.");
                 else
+                {
                     _alcool = value;
+                    
+                }
             }
         }
 
@@ -141,7 +156,10 @@ namespace BusinessLayer.Entities
                 if (!(value >= 0 && value <= 10))
                     throw new Exception("L'amertume doit être comprise entre 0 et 10.");
                 else
+                {
                     _amertume = value;
+                  
+                }
             }
         }
 
@@ -160,7 +178,10 @@ namespace BusinessLayer.Entities
                 if (value <= 0 || value.Equals(null))
                     throw new Exception("Le prix ne peut être nul.");
                 else
+                {
                     _prix = value;
+                   
+                }
 
             }
         }
@@ -177,10 +198,12 @@ namespace BusinessLayer.Entities
             }
             set
             {
-                if (value.Equals(null))
-                    _nbBouteille = 0;
+                if (!value.Equals(null))
+                    _nbBouteille = value;
+              
             }
         }
+
 
         /// <summary>
         /// Empatage
@@ -197,7 +220,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("Le maltage doit avoir des consignes.");
                 else
+                {
                     _empatage = value;
+                 
+                }
             }
         }
 
@@ -216,7 +242,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("Le houblonnage doit avoir des consignes.");
                 else
+                {
                     _brassin = value;
+                   
+                }
             }
         }
 
@@ -235,7 +264,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("La fermentation doit avoir des consignes.");
                 else
+                {
                     _fermentation = value;
+               
+                }
             }
         }
 
@@ -254,7 +286,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("L'embouteillage doit avoir des consignes.");
                 else
+                {
                     _embouteillage = value;
+                
+                }
             }
         }
 
@@ -273,9 +308,16 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("La conservation doit avoir des consignes.");
                 else
+                {
                     _conservation = value;
+                   
+                }
             }
         }
+
+
+
+
         #endregion
 
         #region Constructeur
@@ -284,7 +326,6 @@ namespace BusinessLayer.Entities
         /// </summary>
         /// <param name="nom">Nom de la bière</param>
         /// <param name="categorie">Catégorie de la bière</param>
-        /// <param name="type">Type de la bière</param>
         /// <param name="description">Descritpion de la bière</param>
         /// <param name="alcool">Taux d'alcool de la bière</param>
         /// <param name="amertume">Amertume de la bière</param>
@@ -294,13 +335,14 @@ namespace BusinessLayer.Entities
         /// <param name="fermentation">Description de la frmentation de la bière</param>
         /// <param name="embouteillage">Description de l'embouteillage de la bière</param>
         /// <param name="conservation">Description de la conservation de la bière</param>
-        public Biere(string nom, string categorie, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation)
+        /// <param name="nbbouteille">Nombre de bouteilles en stock </param>
+        public Biere(string nom, string categorie, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation, string image, int nbbouteille)
         {
             try
             {
                 Nom = nom;
                 Categorie = categorie;
-                Descritpion = description;
+                Description = description;
                 Alcool = alcool;
                 Amertume = amertume;
                 Prix = prix;
@@ -309,11 +351,17 @@ namespace BusinessLayer.Entities
                 Fermentation = fermentation;
                 Embouteillage = embouteillage;
                 Conservation = conservation;
+                ImageUrl = ImageUrl;
+                NbBouteille = nbbouteille;
             }
             catch (Exception e)
             {
                 Console.WriteLine("Erreur dans au moins un des arguments lors de la création d'une bière : {0}", e);
             }
+        }
+
+        public Biere()
+        {
         }
         #endregion
 
@@ -365,6 +413,9 @@ namespace BusinessLayer.Entities
             else
                 return string.Format("{0} bouteilles", NbBouteille);
         }
+
+
         #endregion
+
     }
 }

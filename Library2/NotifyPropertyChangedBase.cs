@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Library
 {
+    [Serializable]
     public class NotifyPropertyChangedBase : INotifyPropertyChanged
     {
+        #region implémentation de INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged(String info)
@@ -18,5 +20,6 @@ namespace Library
                 PropertyChanged(this, new PropertyChangedEventArgs(info));
             }
         }
+        #endregion
     }
 }

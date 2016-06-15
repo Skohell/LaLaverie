@@ -55,12 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Factory\BiereFactory.cs" />
     <Compile Include="Model\BiereModel.cs" />
     <Compile Include="Model\ClientModel.cs" />
     <Compile Include="Model\StockModel.cs" />
     <Compile Include="Model\TransactionModel.cs" />
     <Compile Include="ViewModel\AjouterBiereWindowViewModel.cs" />
     <Compile Include="ViewModel\ClientProduitWindowViewModel.cs" />
+    <Compile Include="ViewModel\ClientProfilWindowViewModel.cs" />
     <Compile Include="ViewModel\MainConnexionWindowViewModel.cs" />
     <Compile Include="ViewModel\MainUserWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -68,6 +70,9 @@
     <Compile Include="ViewModel\NewClientWindowViewModel.cs" />
     <Compile Include="View\AjouterBiereWindow.xaml.cs">
       <DependentUpon>AjouterBiereWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClientProfilWindow.xaml.cs">
+      <DependentUpon>ClientProfilWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ModifierBiereWindow.xaml.cs">
       <DependentUpon>ModifierBiereWindow.xaml</DependentUpon>
@@ -97,6 +102,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AjouterBiereWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClientProfilWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

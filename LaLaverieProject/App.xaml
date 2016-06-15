@@ -39,7 +39,7 @@
                     <RotateTransform Angle="325"/>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Margin" Value="-100,80,0,0"/>
+            <Setter Property="Margin" Value="0,80,0,0"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Segoe Print"/>

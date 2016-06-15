@@ -25,7 +25,7 @@ namespace LaLaverieProject.View
         private ClientProduitWindowViewModel _viewModel;
         public ClientProduitWindow(ClientModel client)
         {
-            _viewModel = new ClientProduitWindowViewModel(client);
+            _viewModel = new ClientProduitWindowViewModel(client,this);
             InitializeComponent();
             DataContext = _viewModel;
         }
