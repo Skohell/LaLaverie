@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:LaLaverieProject.View"
         mc:Ignorable="d"
        Background="{DynamicResource WindowBrush}"
+        Icon="../Images/icon.png"
         Title="La Laverie - Profil" MaxHeight="800" MaxWidth="400"  MinHeight="800" MinWidth="400">
-    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="169"/>

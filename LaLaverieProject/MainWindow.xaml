@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaLaverieProject"
         mc:Ignorable="d"
+        Icon="/Images/icon.png"
         Title="La Laverie - Bienvenue" MaxHeight="780" MaxWidth="600" MinHeight="780" MinWidth="600">
     <Grid>
         <Grid.Background>

@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:LaLaverieProject.View"
         mc:Ignorable="d"
         Background="{DynamicResource WindowBrush}"
+        Icon="../Images/icon.png"
         Title="La Laverie - Nouveau client" MaxHeight="800" MaxWidth="400" MinHeight="800" MinWidth="400">
-    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="169"/>
@@ -23,6 +24,7 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
@@ -60,6 +62,7 @@
             <TextBox Grid.Column="1" Grid.Row="13"  Text="{Binding  client.MotDePasse}" Style="{DynamicResource attribut}"/>
         
             <Button Grid.Row="14" Grid.ColumnSpan="2" Name="ValiderNewClient" Content="Valider" Command="{Binding OnNewClientCommand}"/>
+            <Button Grid.Row="15" Grid.ColumnSpan="2" Name="Retour" Content="Retour" Command="{Binding OnRetourCommand}"/>
         </Grid>
     </ScrollViewer>
 </Window>

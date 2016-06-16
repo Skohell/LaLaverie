@@ -33,7 +33,7 @@ namespace LaLaverieProject.View
             DataContext = _viewModel;
 
             viewer = new ScrollViewer();
-            viewer.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+            viewer.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
         }
     }
 }

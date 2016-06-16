@@ -16,6 +16,7 @@ namespace LaLaverieProject.ViewModel
         MainConnexionWindow fenetre;
 
         public DelegateCommand OnConnexionCommand { get; set; }
+        public DelegateCommand OnRetourCommand { get; set; }
 
         public ObservableCollection<ClientModel> ListeClient;
 
@@ -24,14 +25,17 @@ namespace LaLaverieProject.ViewModel
 
         public MainConnexionWindowViewModel(ObservableCollection<ClientModel> ListeClient, MainConnexionWindow fenetre)
         {
-            OnConnexionCommand = new DelegateCommand(OnConnexionAction, CanExecuteConnexion);
+            OnConnexionCommand = new DelegateCommand(OnConnexionAction);
+            OnRetourCommand = new DelegateCommand(OnRetourAction);
             this.ListeClient = ListeClient;
             this.fenetre = fenetre;
         }
 
-        private bool CanExecuteConnexion(object obj)
+        private void OnRetourAction(object obj)
         {
-             return true;
+            MainUserWindow retour = new MainUserWindow();
+            retour.Show();
+            fenetre.Close();
         }
 
         private void OnConnexionAction(object obj)

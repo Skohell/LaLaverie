@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:LaLaverieProject.View"
         mc:Ignorable="d"
         Background="{DynamicResource WindowBrush}"
-        Title="La Laverie - Connexion" MaxHeight="430" MaxWidth="300" MinHeight="430" MinWidth="300">
+        Icon="../Images/icon.png"
+        Title="La Laverie - Connexion" MaxHeight="500" MaxWidth="300" MinHeight="500" MinWidth="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="169"/>
+            <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
@@ -20,5 +22,7 @@
         <TextBox Grid.Row="1" Text="{Binding NomClient}"/>
         <TextBox Grid.Row="2" Text="{Binding MdpClient}"/>
         <Button Grid.Row="3" Content="Connexion" Command="{Binding OnConnexionCommand}"/>
+        <Button Grid.Row="4" Content="Retour" Command="{Binding OnRetourCommand}"/>
+        
     </Grid>
 </Window>
