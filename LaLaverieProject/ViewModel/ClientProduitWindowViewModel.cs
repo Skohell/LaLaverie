@@ -52,15 +52,25 @@ namespace LaLaverieProject.ViewModel
         public string SelectedCategorie
         {
             get { return _selectedCategorie; }
-            set { _selectedCategorie = value; NotifyPropertyChanged("ListeCategorie"); NotifyPropertyChanged("SelectedCategorie"); }
+            set { _selectedCategorie = value; UpdateListe(); NotifyPropertyChanged("ListeCategorie"); NotifyPropertyChanged("SelectedCategorie"); }
         }
 
+  
         private ObservableCollection<BiereModel> _listeBieres;
         public ObservableCollection<BiereModel> ListeBieres
         {
             get { return _listeBieres; }
 
             set { _listeBieres = value; NotifyPropertyChanged("ListeBieres"); NotifyPropertyChanged("SelectedBiere"); }
+
+        }
+
+        private ObservableCollection<BiereModel> _listeBieresFiltre;
+        public ObservableCollection<BiereModel> ListeBieresFiltre
+        {
+            get { return _listeBieresFiltre; }
+
+            set { _listeBieresFiltre = value; NotifyPropertyChanged("ListeBieresFiltre"); NotifyPropertyChanged("SelectedBiereFiltre"); }
 
         }
 
@@ -96,10 +106,11 @@ namespace LaLaverieProject.ViewModel
                  ListeBieres = BiereFactory.AllBiereToBiereModel(BiereDAO.LoadBieres());
                 ListeBieres.Clear();
              }
+            ListeBieresFiltre = new ObservableCollection<BiereModel>(ListeBieres);
+
 
             this.ListeClient = ListeClient;
-             
-
+            
             ListeCategorie = new ObservableCollection<string>();
             ListeCategorie.Add("Toutes");
             ListeCategorie.Add("Rafraîchissante");
@@ -175,7 +186,6 @@ namespace LaLaverieProject.ViewModel
             ClientProfilWindow profil = new ClientProfilWindow(client);
             profil.ShowDialog();
             ClientDAO.SaveClient(ClientFactory.AllClientModelToClient(ListeClient));
-
         }
 
         private bool CanExecuteEdit(object obj)
@@ -187,7 +197,7 @@ namespace LaLaverieProject.ViewModel
 
         private void OnEditAction(object obj)
         {
-            ModifierBiereWindow edit = new ModifierBiereWindow(SelectedBiere);
+            ModifierBiereWindow edit = new ModifierBiereWindow(SelectedBiere,ListeCategorie);
             edit.ShowDialog();
             
         }
@@ -203,6 +213,7 @@ namespace LaLaverieProject.ViewModel
         {
             MessageBox.Show(String.Format("La bière {0} a bien été supprimée !", SelectedBiere.Nom), "Suppression d'une bière");
             ListeBieres.Remove(SelectedBiere);
+            ListeBieresFiltre.Remove(SelectedBiere);
             if (ListeBieres.Count() != 0)
                 SelectedBiere = ListeBieres.First();
             else
@@ -221,9 +232,25 @@ namespace LaLaverieProject.ViewModel
 
         private void OnAddAction(object obj)
         {
-            AjouterBiereWindow add = new AjouterBiereWindow();
+            AjouterBiereWindow add = new AjouterBiereWindow(ListeCategorie);
             add.ShowDialog();
             ListeBieres.Add(add.ViewModel.BiereToAdd);
+            ListeBieresFiltre.Add(add.ViewModel.BiereToAdd);
         }
+
+        private void UpdateListe()
+        {
+            if (!SelectedCategorie.Equals("Toutes"))
+            {
+                List<BiereModel> l = new List<BiereModel>(ListeBieres);
+                ListeBieresFiltre = new ObservableCollection<BiereModel>(l.Where(b => b.Categorie.Equals(SelectedCategorie)));
+            }
+            else
+            {
+                ListeBieresFiltre = new ObservableCollection<BiereModel>(ListeBieres);
+            }
+            
+        }
+       
     }
 }

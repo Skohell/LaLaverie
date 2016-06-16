@@ -19,6 +19,5 @@ C:\Users\Sebastien\Source\Repos\LaLaverie2\Library2\obj\Debug\Library2.dll
 C:\Users\Sebastien\Source\Repos\LaLaverie2\Library2\obj\Debug\Library2.pdb
 C:\Users\DarkFury\Source\Repos\LaLaverie\Library2\bin\Debug\Library2.dll
 C:\Users\DarkFury\Source\Repos\LaLaverie\Library2\bin\Debug\Library2.pdb
-C:\Users\DarkFury\Source\Repos\LaLaverie\Library2\obj\Debug\Library.csprojResolveAssemblyReference.cache
 C:\Users\DarkFury\Source\Repos\LaLaverie\Library2\obj\Debug\Library2.dll
 C:\Users\DarkFury\Source\Repos\LaLaverie\Library2\obj\Debug\Library2.pdb

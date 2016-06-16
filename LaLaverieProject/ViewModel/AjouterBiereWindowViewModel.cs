@@ -4,6 +4,7 @@ using Library;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,27 @@ namespace LaLaverieProject.ViewModel
         public DelegateCommand OnImageCommand { get; set; }
         public AjouterBiereWindow fenetre { get; set; }
 
+        private string _selectedCategorie;
+        public string SelectedCategorie
+        {
+            get { return _selectedCategorie; }
+            set { _selectedCategorie = value; BiereToAdd.Categorie = value; }
+        }
+
+
+        private ObservableCollection<string> _listeCategorie;
+        public ObservableCollection<string> ListeCategorie
+        {
+            get
+            {
+                return _listeCategorie;
+            }
+
+            set
+            {
+                { _listeCategorie = value;}
+            }
+        }
 
         public BiereModel BiereToAdd
         {
@@ -24,12 +46,13 @@ namespace LaLaverieProject.ViewModel
             set;
         }
 
-        public AjouterBiereWindowViewModel(AjouterBiereWindow fenetre)
+        public AjouterBiereWindowViewModel(AjouterBiereWindow fenetre, ObservableCollection<string> ListeCategorie)
         {
             BiereToAdd = new BiereModel();
             OnNewBiereCommand = new DelegateCommand(OnAddAction, CanExecuteAdd);
             OnImageCommand = new DelegateCommand(OnImageAction);
             this.fenetre = fenetre;
+            this.ListeCategorie = ListeCategorie;
         }
 
         private void OnImageAction(object obj)

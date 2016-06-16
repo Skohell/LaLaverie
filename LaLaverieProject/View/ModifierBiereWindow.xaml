@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Background="{DynamicResource WindowBrush}"
         Icon="../Images/icon.png"
-        Title="La Laverie - Nouvelle bière" MaxHeight="800" MaxWidth="800"  MinHeight="800" MinWidth="800">
+        Title="La Laverie - Modifier bière" MaxHeight="800" MaxWidth="800"  MinHeight="800" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="169"/>
@@ -37,7 +37,7 @@
         <Label Grid.Row="6" Content="Prix"/>
         <Label Grid.Row="7" Content="URL d'un image"/>
         <TextBox Grid.Column="1" Grid.Row="1"  Text="{Binding BiereToEdit.Nom}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="1" Grid.Row="2"  Text="{Binding BiereToEdit.Categorie}" Style="{DynamicResource attribut}"/>
+        <ComboBox Grid.Column="1" Grid.Row="2" ItemsSource="{Binding ListeCategorie}" SelectedItem="{Binding SelectedCategorie}" Style="{DynamicResource ComboBoxAttribut}"/>
         <TextBox Grid.Column="1" Grid.Row="3"  Text="{Binding BiereToEdit.Description}" Style="{DynamicResource attribut}"/>
         <TextBox Grid.Column="1" Grid.Row="4"  Text="{Binding BiereToEdit.Alcool}" Style="{DynamicResource attribut}"/>
         <TextBox Grid.Column="1" Grid.Row="5"  Text="{Binding BiereToEdit.Amertume}" Style="{DynamicResource attribut}"/>
@@ -50,12 +50,12 @@
         <Label Grid.Column="2" Grid.Row="4" Content="Fermentation"/>
         <Label Grid.Column="2" Grid.Row="5" Content="Embouteillage"/>
         <Label Grid.Column="2" Grid.Row="6" Content="Garde"/>
-        <TextBox Grid.Column="3" Grid.Row="1"  Text="{Binding BiereToAdd.NbBouteille}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="3" Grid.Row="2"  Text="{Binding BiereToAdd.Empatage}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="3" Grid.Row="3"  Text="{Binding BiereToAdd.Brassin}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="3" Grid.Row="4"  Text="{Binding BiereToAdd.Fermentation}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="3" Grid.Row="5"  Text="{Binding BiereToAdd.Embouteillage}" Style="{DynamicResource attribut}"/>
-        <TextBox Grid.Column="3" Grid.Row="6"  Text="{Binding BiereToAdd.Conservation}" Style="{DynamicResource attribut}"/>
+        <TextBox Grid.Column="3" Grid.Row="1"  Text="{Binding BiereToEdit.NbBouteille}" Style="{DynamicResource attribut}"/>
+        <TextBox Grid.Column="3" Grid.Row="2"  Text="{Binding BiereToEdit.Empatage}" Style="{DynamicResource attribut}"/>
+        <TextBox Grid.Column="3" Grid.Row="3"  Text="{Binding BiereToEdit.Brassin}" Style="{DynamicResource attribut}"/>
+        <TextBox Grid.Column="3" Grid.Row="4"  Text="{Binding BiereToEdit.Fermentation}" Style="{DynamicResource attribut}"/>
+        <TextBox Grid.Column="3" Grid.Row="5"  Text="{Binding BiereToEdit.Embouteillage}" Style="{DynamicResource attribut}"/>
+        <TextBox Grid.Column="3" Grid.Row="6"  Text="{Binding BiereToEdit.Conservation}" Style="{DynamicResource attribut}"/>
 
         <Button Grid.ColumnSpan="2" Grid.Row="8" Content="Modifier" Command="{Binding OnEditCommand}"/>
     </Grid>

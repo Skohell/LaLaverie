@@ -3,6 +3,7 @@ using LaLaverieProject.View;
 using Library;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,36 @@ namespace LaLaverieProject.ViewModel
 
         public DelegateCommand OnEditCommand { get; set; }
 
-        public ModifierBiereWindowViewModel(BiereModel biere, ModifierBiereWindow window)
+        private string _selectedCategorie;
+        public string SelectedCategorie
+        {
+            get { return _selectedCategorie; }
+            set { _selectedCategorie = value; BiereToEdit.Categorie = value; }
+        }
+
+
+        private ObservableCollection<string> _listeCategorie;
+        public ObservableCollection<string> ListeCategorie
+        {
+            get
+            {
+                return _listeCategorie;
+            }
+
+            set
+            {
+                { _listeCategorie = value; }
+            }
+        }
+
+        public ModifierBiereWindowViewModel(BiereModel biere, ModifierBiereWindow window,ObservableCollection<string> ListeCategorie)
         {
 
             fenetre = window;
             BiereToEdit = biere;
             OnEditCommand = new DelegateCommand(OnEditAction, CanExecuteEdit);
-
+            this.ListeCategorie = ListeCategorie;
+            SelectedCategorie = BiereToEdit.Categorie;
         }
 
         private bool CanExecuteEdit(object obj)

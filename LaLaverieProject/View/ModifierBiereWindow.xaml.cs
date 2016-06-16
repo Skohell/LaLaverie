@@ -2,6 +2,7 @@
 using LaLaverieProject.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,9 @@ namespace LaLaverieProject.View
     {
         private ModifierBiereWindowViewModel _viewModel;
 
-        public ModifierBiereWindow(BiereModel biere)
+        public ModifierBiereWindow(BiereModel biere, ObservableCollection<string> ListeCategorie)
         {
-            _viewModel = new ModifierBiereWindowViewModel( biere,this);
+            _viewModel = new ModifierBiereWindowViewModel( biere,this,ListeCategorie);
             InitializeComponent();
             DataContext = _viewModel;
         }

@@ -50,7 +50,7 @@
 
         <StackPanel Grid.Row="3" Grid.RowSpan="2" Style="{DynamicResource liste}">
             <ComboBox ItemsSource="{Binding ListeCategorie}" SelectedItem="{Binding SelectedCategorie}" Style="{DynamicResource categorieBiere}"/>
-            <ListBox ItemsSource="{Binding ListeBieres}" SelectedItem="{Binding SelectedBiere}" Style="{DynamicResource listeBiere}"/>
+            <ListBox ItemsSource="{Binding ListeBieresFiltre}" SelectedItem="{Binding SelectedBiere}" Style="{DynamicResource listeBiere}"/>
         </StackPanel>
 
         <Image Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Source="{Binding SelectedBiere.ImageUrl}" />
