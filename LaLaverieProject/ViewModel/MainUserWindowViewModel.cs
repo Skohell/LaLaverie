@@ -1,4 +1,6 @@
-﻿using LaLaverie.Model;
+﻿using BusinessLayer.DAO;
+using LaLaverie.Model;
+using LaLaverieProject.Factory;
 using LaLaverieProject.View;
 using Library;
 using System;
@@ -36,12 +38,20 @@ namespace LaLaverieProject.ViewModel
             OnNewClientCommand = new DelegateCommand(OnNewClientAction);
             OnConnexionCommand = new DelegateCommand(OnConnexionAction);
 
-            ListeClient = new ObservableCollection<ClientModel>()
+            ListeClient = new ObservableCollection<ClientModel>();
+
+            try
             {
-                new ClientModel("Gravallon","Guillaume",42,"rue du zouave","Clermont-Ferrand",63000,"guillaume.gravallon@gmail.com","mdp",19),
-                new ClientModel("Rico","Sébastien",5,"rue du Mirondet","Aubière",63170,"rico.sebastien@gmail.com","mdp",42),
-                new ClientModel("admin","admin",5,"admin","admin",42,"admin","admin",42)
-            };
+                ListeClient = ClientFactory.AllClientToClientModel(ClientDAO.LoadClient());
+            }
+            catch
+            {
+                ListeClient.Add(new ClientModel("admin", "admin", 42, "admin", "admin", 42, "admin", "admin", 42));
+                ClientDAO.SaveClient(ClientFactory.AllClientModelToClient(ListeClient));
+                ListeClient = ClientFactory.AllClientToClientModel(ClientDAO.LoadClient());
+                ListeClient.Clear();
+            }
+
 
             this.fenetre = fenetre;
 

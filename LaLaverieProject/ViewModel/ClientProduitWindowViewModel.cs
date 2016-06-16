@@ -64,6 +64,15 @@ namespace LaLaverieProject.ViewModel
 
         }
 
+        private ObservableCollection<ClientModel> _listeClient;
+        public ObservableCollection<ClientModel> ListeClient
+        {
+            get { return _listeClient; }
+
+            set { _listeClient = value;}
+
+        }
+
         private BiereModel _selectedBiere;
         public BiereModel SelectedBiere
         {
@@ -72,7 +81,7 @@ namespace LaLaverieProject.ViewModel
         }
 
 
-        public ClientProduitWindowViewModel(ClientModel client, ClientProduitWindow fenetre)
+        public ClientProduitWindowViewModel(ClientModel client, ClientProduitWindow fenetre, ObservableCollection<ClientModel> ListeClient)
         {
             ListeBieres = new ObservableCollection<BiereModel>();
            
@@ -87,14 +96,17 @@ namespace LaLaverieProject.ViewModel
                  ListeBieres = BiereFactory.AllBiereToBiereModel(BiereDAO.LoadBieres());
                 ListeBieres.Clear();
              }
+
+            this.ListeClient = ListeClient;
              
 
             ListeCategorie = new ObservableCollection<string>();
             ListeCategorie.Add("Toutes");
             ListeCategorie.Add("Rafraîchissante");
-            ListeCategorie.Add("Fruitée");
+            ListeCategorie.Add("Fruitée/Acidulée");
+            ListeCategorie.Add("Riche/Corsée");
 
-            if(ListeBieres.Count()>0)
+            if (ListeBieres.Count()>0)
                 SelectedBiere = ListeBieres.First();
             SelectedCategorie = ListeCategorie.First();
 
@@ -162,6 +174,7 @@ namespace LaLaverieProject.ViewModel
         {
             ClientProfilWindow profil = new ClientProfilWindow(client);
             profil.ShowDialog();
+            ClientDAO.SaveClient(ClientFactory.AllClientModelToClient(ListeClient));
 
         }
 

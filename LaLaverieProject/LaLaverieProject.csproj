@@ -56,10 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Factory\BiereFactory.cs" />
+    <Compile Include="Factory\ClientFactory.cs" />
     <Compile Include="Model\BiereModel.cs" />
     <Compile Include="Model\ClientModel.cs" />
-    <Compile Include="Model\StockModel.cs" />
-    <Compile Include="Model\TransactionModel.cs" />
     <Compile Include="ViewModel\AjouterBiereWindowViewModel.cs" />
     <Compile Include="ViewModel\ClientProduitWindowViewModel.cs" />
     <Compile Include="ViewModel\ClientProfilWindowViewModel.cs" />

@@ -44,7 +44,7 @@ namespace LaLaverieProject.ViewModel
             {
                 if(c.Nom.Equals(NomClient) && c.MotDePasse.Equals(MdpClient))
                 {
-                    ClientProduitWindow page = new ClientProduitWindow(c);
+                    ClientProduitWindow page = new ClientProduitWindow(c, ListeClient);
                     page.Show();
                     fenetre.Close();
                     return;

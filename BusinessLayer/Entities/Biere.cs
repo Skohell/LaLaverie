@@ -15,27 +15,7 @@ namespace BusinessLayer.Entities
     public class Biere 
     {
 
-        #region Listes static 
-        /// <summary>
-        /// Liste de toutes les catégories de bières
-        /// </summary>
-        public static List<string> categories = new List<string>();
-        /// <summary>
-        /// Liste de toutes les bières 
-        /// </summary>
-        public static List<Biere> bieres = new List<Biere>();
-        /// <summary>
-        /// Liste d'ustensiles
-        /// </summary>
-        public static Dictionary<Stock, int> ustensiles = new Dictionary<Stock, int>();
-        /// <summary>
-        /// Liste d'ingrédients --------------------- A revoir ---------------------------
-        /// </summary>
-        public static Dictionary<Stock, int> ingredients = new Dictionary<Stock, int>();
-        #endregion
-
         #region Propriétés de la classe
-
         /// <summary>
         /// Lien vers l'image de la bière
         /// </summary>

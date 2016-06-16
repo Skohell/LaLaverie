@@ -1,4 +1,6 @@
-﻿using LaLaverie.Model;
+﻿using BusinessLayer.DAO;
+using LaLaverie.Model;
+using LaLaverieProject.Factory;
 using LaLaverieProject.View;
 using Library;
 using System;
@@ -42,6 +44,7 @@ namespace LaLaverieProject.ViewModel
         private void OnNewClientAction(object obj)
         {
             ListeClient.Add(client);
+            ClientDAO.SaveClient(ClientFactory.AllClientModelToClient(ListeClient));
             MessageBox.Show(String.Format("Vous êtes maintenant enregistré dans notre base de donnée !"));
             fenetre.Close();
 

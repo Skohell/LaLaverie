@@ -1,37 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Library;
-using BusinessLayer.Entities;
-using System.Runtime.Serialization;
-using System.ComponentModel;
 
 namespace LaLaverie.Model
 {
-    
+
     public class BiereModel : NotifyPropertyChangedBase
     {
 
-        #region Listes static 
-        /// <summary>
-        /// Liste de toutes les catégories de bières
-        /// </summary>
-        public static List<string> categories = new List<string>();
-        /// <summary>
-        /// Liste de toutes les bières 
-        /// </summary>
-        public static List<Biere> bieres = new List<Biere>();
-        /// <summary>
-        /// Liste d'ustensiles
-        /// </summary>
-        public static Dictionary<Stock, int> ustensiles = new Dictionary<Stock, int>();
-        /// <summary>
-        /// Liste d'ingrédients --------------------- A revoir ---------------------------
-        /// </summary>
-        public static Dictionary<Stock, int> ingredients = new Dictionary<Stock, int>();
-        #endregion
 
         #region Propriétés de la classe
 

@@ -62,10 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BiereDAO.cs" />
+    <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="Entities\Biere.cs" />
     <Compile Include="Entities\Client.cs" />
-    <Compile Include="Entities\Stock.cs" />
-    <Compile Include="Entities\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

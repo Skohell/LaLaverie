@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Entities
 {
+    [Serializable]
     public class Client
-    { 
-        #region Listes static
-        /// <summary>
-        /// Liste des ventes passées 
-        /// </summary>
-        public static List<Transaction> ventes = new List<Transaction>();
-        #endregion
-
+    {
         #region Attributs et propriétés
         /// <summary>
         /// Nom du client
@@ -31,7 +25,11 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("Le nom du client est invalide.");
                 else
+                {
                     _nom = value;
+                   
+                }
+
             }
         }
 
@@ -50,7 +48,32 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("Le prenom du client est invalide.");
                 else
+                {
                     _prenom = value;
+                    
+                }
+            }
+        }
+
+        /// <summary>
+        /// Age du client
+        /// </summary>
+        private int _age;
+        public int Age
+        {
+            get
+            {
+                return _age;
+            }
+            set
+            {
+                if (value.Equals(null))
+                    throw new Exception("L'age du client est invalide.");
+                else
+                {
+                    _age = value;
+                    
+                }
             }
         }
 
@@ -67,6 +90,7 @@ namespace BusinessLayer.Entities
             set
             {
                 _numeroRue = value;
+                
             }
         }
 
@@ -85,7 +109,11 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("La rue de l'adresse du client est invalide.");
                 else
+                {
                     _rue = value;
+                    
+                }
+
             }
         }
 
@@ -104,7 +132,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     throw new Exception("La ville du client est invalide.");
                 else
+                {
                     _ville = value;
+                  
+                }
             }
         }
 
@@ -123,7 +154,10 @@ namespace BusinessLayer.Entities
                 if (!(value > 0 && value <= 99999))
                     throw new Exception("Le code postal n'est pas correcte.");
                 else
+                {
                     _codePostal = value;
+                   
+                }
             }
         }
 
@@ -142,7 +176,10 @@ namespace BusinessLayer.Entities
                 if (value.Equals(null))
                     _mail = "Ce client ne possède pas d'adresse mail";
                 else
+                {
                     _mail = value;
+                 
+                }
             }
         }
 
@@ -163,7 +200,7 @@ namespace BusinessLayer.Entities
                 else
                 {
                     _motDePasse = value;
-                    
+                  
                 }
             }
         }
@@ -181,17 +218,20 @@ namespace BusinessLayer.Entities
         /// <param name="codePostal">Code postal du client</param>
         /// <param name="mail">Adresse mail du client</param>
         /// <param name="mdp">Mot de passe du client</param>
-        public Client(string nom, string prenom, int num, string rue, string ville, int codePostal, string mail, string mdp)
+        /// <param name="age">Age du client</param>
+        public Client(string nom, string prenom, int num, string rue, string ville, int codePostal, string mail, string mdp, int age)
         {
             try
             {
                 Nom = nom;
                 Prenom = prenom;
                 NumeroRue = num;
+                Rue = rue;
                 Ville = ville;
                 CodePostal = codePostal;
                 Mail = mail;
                 MotDePasse = mdp;
+                Age = age;
             }
             catch (Exception e)
             {
@@ -199,6 +239,8 @@ namespace BusinessLayer.Entities
             }
 
         }
+
+        public Client() { }
         #endregion
 
         #region Methodes

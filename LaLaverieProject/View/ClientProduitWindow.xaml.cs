@@ -23,9 +23,9 @@ namespace LaLaverieProject.View
     public partial class ClientProduitWindow : Window
     {
         private ClientProduitWindowViewModel _viewModel;
-        public ClientProduitWindow(ClientModel client)
+        public ClientProduitWindow(ClientModel client, ObservableCollection<ClientModel> ListeClient)
         {
-            _viewModel = new ClientProduitWindowViewModel(client,this);
+            _viewModel = new ClientProduitWindowViewModel(client,this, ListeClient);
             InitializeComponent();
             DataContext = _viewModel;
         }
