@@ -177,7 +177,12 @@ namespace LaLaverieProject.ViewModel
         private bool CanExecuteModify(object obj)
         {
             if (_isUserAdmin)
+            {
+                if (ListeBieres.Count() != 0)
+                    return true;
                 return false;
+            }
+               
             return true;
         }
 
@@ -214,7 +219,7 @@ namespace LaLaverieProject.ViewModel
             MessageBox.Show(String.Format("La bière {0} a bien été supprimée !", SelectedBiere.Nom), "Suppression d'une bière");
             ListeBieres.Remove(SelectedBiere);
             ListeBieresFiltre.Remove(SelectedBiere);
-            if (ListeBieres.Count() != 0)
+            if (ListeBieres.Count() != 0) 
                 SelectedBiere = ListeBieres.First();
             else
             {

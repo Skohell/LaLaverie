@@ -1,6 +1,7 @@
 ﻿using LaLaverie.Model;
 using LaLaverieProject.View;
 using Library;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,6 +19,7 @@ namespace LaLaverieProject.ViewModel
         public ModifierBiereWindow fenetre { get; set; }
 
         public DelegateCommand OnEditCommand { get; set; }
+        public DelegateCommand OnImageCommand { get; set; }
 
         private string _selectedCategorie;
         public string SelectedCategorie
@@ -49,6 +51,7 @@ namespace LaLaverieProject.ViewModel
             OnEditCommand = new DelegateCommand(OnEditAction, CanExecuteEdit);
             this.ListeCategorie = ListeCategorie;
             SelectedCategorie = BiereToEdit.Categorie;
+            OnImageCommand = new DelegateCommand(OnImageAction);
         }
 
         private bool CanExecuteEdit(object obj)
@@ -63,6 +66,12 @@ namespace LaLaverieProject.ViewModel
         }
 
 
-
+        private void OnImageAction(object obj)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Fichiers image (.png)|*.png|Fichiers image (.jpg)|*.jpg";
+            file.ShowDialog();
+            BiereToEdit.ImageUrl = file.FileName;
+        }
     }
 }

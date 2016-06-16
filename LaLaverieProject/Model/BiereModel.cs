@@ -24,6 +24,7 @@ namespace LaLaverie.Model
             set
             {
                 _imageUrl = value;
+                NotifyPropertyChanged("ImageUrl");
             }
         }
 
