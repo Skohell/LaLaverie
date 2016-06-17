@@ -34,6 +34,20 @@ namespace LaLaverieProject.ViewModel
 
         private bool _isUserAdmin=false;
 
+        private string _recherche;
+        public string Recherche
+        {
+            get
+            {
+                return _recherche;
+            }
+
+            set
+            {
+                _recherche = value;NotifyPropertyChanged(Recherche);UpdateListeRecherche();
+            }
+        }
+
 
         private ObservableCollection<string> _listeCategorie;
         public ObservableCollection<string> ListeCategorie
@@ -220,7 +234,13 @@ namespace LaLaverieProject.ViewModel
         {
             ModifierBiereWindow edit = new ModifierBiereWindow(SelectedBiere,ListeCategorie);
             edit.ShowDialog();
-            
+
+            //fix pour la liste qui ne s'actualise pas toute seule lors d'une modif
+            string save = SelectedCategorie;
+            SelectedCategorie = ListeCategorie.First();
+            SelectedCategorie = save;
+
+
         }
 
         private bool CanExecuteDelete(object obj)
@@ -281,6 +301,14 @@ namespace LaLaverieProject.ViewModel
             }
             
         }
-       
+
+        private void UpdateListeRecherche()
+        {
+            SelectedCategorie = ListeCategorie.First();
+            List<BiereModel> l = new List<BiereModel>(ListeBieres);
+            ListeBieresFiltre = new ObservableCollection<BiereModel>(l.Where(b => b.Nom.Contains(Recherche)));
+            
+        }
+
     }
 }

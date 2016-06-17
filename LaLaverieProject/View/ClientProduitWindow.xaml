@@ -48,8 +48,8 @@
 
         <StackPanel Grid.Row="3" Grid.RowSpan="2" Style="{DynamicResource liste}">
             <ComboBox ItemsSource="{Binding ListeCategorie}" SelectedItem="{Binding SelectedCategorie}" Style="{DynamicResource categorieBiere}"/>
-            <ListBox ItemsSource="{Binding ListeBieresFiltre}" SelectedItem="{Binding SelectedBiere}" Style="{DynamicResource listeBiere}"/>
-            <TextBox Text="Recheche..." Style="{DynamicResource recherche}"/>
+            <ListBox ItemsSource="{Binding ListeBieresFiltre,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedBiere, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource listeBiere}"/>
+            <TextBox Text="{Binding Recherche,UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource recherche}"/>
         </StackPanel>
 
         <Image Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Source="{Binding SelectedBiere.ImageUrl}" />
