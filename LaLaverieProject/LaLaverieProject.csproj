@@ -67,6 +67,7 @@
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ModifierBiereWindowViewModel.cs" />
     <Compile Include="ViewModel\NewClientWindowViewModel.cs" />
+    <Compile Include="ViewModel\RecetteWindowViewModel.cs" />
     <Compile Include="View\AjouterBiereWindow.xaml.cs">
       <DependentUpon>AjouterBiereWindow.xaml</DependentUpon>
     </Compile>
@@ -87,6 +88,9 @@
     </Compile>
     <Compile Include="View\MainUserWindow.xaml.cs">
       <DependentUpon>MainUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecetteWindow.xaml.cs">
+      <DependentUpon>RecetteWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecetteWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

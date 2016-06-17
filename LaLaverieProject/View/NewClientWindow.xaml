@@ -41,7 +41,7 @@
             <Label Grid.Row="4" Content="Age"/>
             <TextBox Grid.Column="1" Grid.Row="2"  Text="{Binding client.Nom}" Style="{DynamicResource attribut}"/>
             <TextBox Grid.Column="1" Grid.Row="3"  Text="{Binding  client.Prenom}" Style="{DynamicResource attribut}"/>
-            <TextBox Grid.Column="1" Grid.Row="4"  Text="{Binding  client.Prenom}" Style="{DynamicResource attribut}"/>
+            <TextBox Grid.Column="1" Grid.Row="4"  Text="{Binding  client.Age}" Style="{DynamicResource attribut}"/>
 
             <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Text="Adresse" Style="{DynamicResource rubriqueProfil}"/>
             <Label Grid.Row="6" Content="Numéro rue"/>

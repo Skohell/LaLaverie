@@ -1,0 +1,46 @@
+﻿<Window x:Class="LaLaverieProject.View.RecetteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaLaverieProject.View"
+        mc:Ignorable="d"
+        Background="{DynamicResource WindowBrush}"
+        Title="La Laverie - Recette" MaxHeight="800" MaxWidth="1000" MinHeight="800" MinWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="169"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="../Images/Titre.png"/>
+
+        <StackPanel Grid.Row="1" Style="{DynamicResource descriptionRecette}">
+            <TextBlock Text="Empâtage :" Style="{DynamicResource rubriqueRecette}"/>
+            <TextBlock Style="{DynamicResource texteRecette}" Text="{Binding biere.Empatage}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Style="{DynamicResource descriptionRecette}">
+            <TextBlock Text="Brassin :" Style="{DynamicResource rubriqueRecette}"/>
+            <TextBlock Style="{DynamicResource texteRecette}" Text="{Binding biere.Brassin}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Style="{DynamicResource descriptionRecette}">
+            <TextBlock Text="Fermentation :" Style="{DynamicResource rubriqueRecette}"/>
+            <TextBlock Style="{DynamicResource texteRecette}" Text="{Binding biere.Fermentation}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Style="{DynamicResource descriptionRecette}">
+            <TextBlock Text="Embouteillage :" Style="{DynamicResource rubriqueRecette}"/>
+            <TextBlock Style="{DynamicResource texteRecette}" Text="{Binding biere.Embouteillage}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Style="{DynamicResource descriptionRecette}">
+            <TextBlock Text="Garde :" Style="{DynamicResource rubriqueRecette}"/>
+            <TextBlock Style="{DynamicResource texteRecette}" Text="{Binding biere.Conservation}"/>
+        </StackPanel>
+    </Grid>
+</Window>

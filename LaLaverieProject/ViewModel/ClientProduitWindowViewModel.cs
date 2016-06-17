@@ -30,6 +30,7 @@ namespace LaLaverieProject.ViewModel
         public DelegateCommand OnLogoutCommand { get; set; }
         public DelegateCommand OnSaveCommand { get; set; }
         public DelegateCommand OnHyperLinkCommand { get; set; }
+        public DelegateCommand OnRecetteCommand { get; set; }
 
         private bool _isUserAdmin=false;
 
@@ -130,11 +131,31 @@ namespace LaLaverieProject.ViewModel
             OnLogoutCommand = new DelegateCommand(OnLogoutAction, CanExecuteLogout);
             OnSaveCommand = new DelegateCommand(OnSaveAction,CanExecuteSave);
             OnHyperLinkCommand = new DelegateCommand(OnHyperLinkAction, CanExecuteHyperLink);
+            OnRecetteCommand = new DelegateCommand(OnRecetteAction, CanExecuteRecette);
 
             this.fenetre = fenetre;
 
             if (client.Nom.Equals("admin") && client.MotDePasse.Equals("admin"))
                 _isUserAdmin = true;
+        }
+
+        private bool CanExecuteRecette(object obj)
+        {
+            if (_isUserAdmin)
+            {
+                if (ListeBieres.Count() != 0)
+                    return true;
+                return false;
+            }
+
+            return false;
+        }
+
+        private void OnRecetteAction(object obj)
+        {
+            RecetteWindow recette = new RecetteWindow(SelectedBiere);
+            recette.Show();
+            fenetre.Close();
         }
 
         private bool CanExecuteHyperLink(object obj)
@@ -178,11 +199,8 @@ namespace LaLaverieProject.ViewModel
         {
             if (_isUserAdmin)
             {
-                if (ListeBieres.Count() != 0)
-                    return true;
                 return false;
             }
-               
             return true;
         }
 

@@ -145,9 +145,15 @@
         </Style>
         <Style TargetType="ListBox" x:Key="listeBiere">
             <Setter Property="FontFamily" Value="Segoe Print"/>
-            <Setter Property="Height" Value="273"/>
+            <Setter Property="Height" Value="180"/>
             <Setter Property="Width" Value="300"/>
             <Setter Property="Background" Value="#F0F0F0"/>
+            <Setter Property="BorderBrush" Value="#3F3F3F"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox" x:Key="recherche">
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Margin" Value="0,5,0,0"/>
         </Style>
         <Style TargetType="Image" x:Key="imageRubrique">
             <Setter Property="Margin" Value="30"/>
@@ -162,7 +168,15 @@
             </Style.Triggers>
         </Style>
         <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="modifierProfil">
-            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="recette">
+            <Setter Property="Margin" Value="0,5,0,5"/>
             <Style.Triggers>
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Opacity" Value="0"/>
@@ -178,6 +192,29 @@
             <Setter Property="Foreground" Value="#F0F0F0"/>
             <Setter Property="TextDecorations" Value="Underline"/>
             <Setter Property="Margin" Value="150,0,0,0"/>
+        </Style>
+        <!--#endregion-->
+        
+        <!--#region RecetteWindow-->
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="texteRecette">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="TextBlock" x:Key="rubriqueRecette">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Segoe Print"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="descriptionRecette">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <!--#endregion-->
     </Application.Resources>

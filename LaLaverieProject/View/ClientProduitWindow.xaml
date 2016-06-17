@@ -36,9 +36,12 @@
             <Image Source="../Images/Titre.png"/>
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="center">
-                    <Button Content="Modifier profil" Command="{Binding OnModifyCommand}" Style="{DynamicResource modifierProfil}"/>
-                    <Button Content="Déconnexion"  Command="{Binding OnLogoutCommand}" Style="{DynamicResource boutonBiereTop}"/>
-                    <Button Content="Commander en ligne" Command="{Binding OnHyperLinkCommand}" Style="{DynamicResource boutonBiereTop}"/>
+                    <Button Grid.Row="1" Content="Déconnexion"  Command="{Binding OnLogoutCommand}" Style="{DynamicResource boutonBiereTop}"/>
+                    <Grid>
+                        <Button Content="Modifier profil" Command="{Binding OnModifyCommand}" Style="{DynamicResource modifierProfil}"/>
+                        <Button Content="Recette" Command="{Binding OnRecetteCommand}" Style="{DynamicResource recette}"/>
+                    </Grid>
+                    <Button Grid.Row="3" Content="Commander en ligne" Command="{Binding OnHyperLinkCommand}" Style="{DynamicResource boutonBiereTop}"/>
                 </StackPanel>
             </DockPanel>
         </StackPanel>
@@ -51,6 +54,7 @@
         <StackPanel Grid.Row="3" Grid.RowSpan="2" Style="{DynamicResource liste}">
             <ComboBox ItemsSource="{Binding ListeCategorie}" SelectedItem="{Binding SelectedCategorie}" Style="{DynamicResource categorieBiere}"/>
             <ListBox ItemsSource="{Binding ListeBieresFiltre}" SelectedItem="{Binding SelectedBiere}" Style="{DynamicResource listeBiere}"/>
+            <TextBox Text="Recheche..." Style="{DynamicResource recherche}"/>
         </StackPanel>
 
         <Image Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Source="{Binding SelectedBiere.ImageUrl}" />
