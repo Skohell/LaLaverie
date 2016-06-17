@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:LaLaverieProject"
         mc:Ignorable="d"
         Icon="/Images/icon.png"
+        WindowStartupLocation="CenterScreen"
         Title="La Laverie - Bienvenue" MaxHeight="780" MaxWidth="600" MinHeight="780" MinWidth="600">
     <Grid>
         <Grid.Background>

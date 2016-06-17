@@ -306,7 +306,7 @@ namespace LaLaverieProject.ViewModel
         {
             SelectedCategorie = ListeCategorie.First();
             List<BiereModel> l = new List<BiereModel>(ListeBieres);
-            ListeBieresFiltre = new ObservableCollection<BiereModel>(l.Where(b => b.Nom.Contains(Recherche)));
+            ListeBieresFiltre = new ObservableCollection<BiereModel>(l.Where(b => b.Nom.ToUpper().Contains(Recherche.ToUpper())));
             
         }
 

@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Background="{DynamicResource WindowBrush}"
         Icon="../Images/icon.png"
+        WindowStartupLocation="CenterScreen"
         Title="La Laverie - Produits" MaxHeight="820" MaxWidth="1000" MinHeight="820" MinWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
@@ -49,7 +50,10 @@
         <StackPanel Grid.Row="3" Grid.RowSpan="2" Style="{DynamicResource liste}">
             <ComboBox ItemsSource="{Binding ListeCategorie}" SelectedItem="{Binding SelectedCategorie}" Style="{DynamicResource categorieBiere}"/>
             <ListBox ItemsSource="{Binding ListeBieresFiltre,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedBiere, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource listeBiere}"/>
-            <TextBox Text="{Binding Recherche,UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource recherche}"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Margin="0,10,0,0" Content="Rechercher :"/>
+                <TextBox Width="210" Text="{Binding Recherche,UpdateSourceTrigger=PropertyChanged}"  Style="{DynamicResource recherche}"/>
+            </StackPanel>
         </StackPanel>
 
         <Image Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Source="{Binding SelectedBiere.ImageUrl}" />
