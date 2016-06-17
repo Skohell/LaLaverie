@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -60,7 +61,9 @@ namespace LaLaverieProject.ViewModel
             OpenFileDialog file = new OpenFileDialog();
             file.Filter = "Fichiers image (.png)|*.png|Fichiers image (.jpg)|.jpg";
             file.ShowDialog();
-            BiereToAdd.ImageUrl = file.FileName;
+            string path = String.Format(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + file.SafeFileName);
+            System.IO.File.Copy(file.FileName, path);
+            BiereToAdd.ImageUrl = path;
         }
 
         private bool CanExecuteAdd(object obj)

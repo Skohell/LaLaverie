@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:LaLaverieProject.View"
         mc:Ignorable="d"
         Background="{DynamicResource WindowBrush}"
+        Icon="../Images/icon.png"
+        WindowStartupLocation="CenterScreen"
         Title="La Laverie - Recette" MaxHeight="800" MaxWidth="1000" MinHeight="800" MinWidth="1000">
     <Grid>
         <Grid.RowDefinitions>

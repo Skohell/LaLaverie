@@ -30,8 +30,23 @@ namespace LaLaverieProject.ViewModel
         public DelegateCommand OnSaveCommand { get; set; }
         public DelegateCommand OnHyperLinkCommand { get; set; }
         public DelegateCommand OnRecetteCommand { get; set; }
+        private bool _isRecetteEnabled = true;
 
         private bool _isUserAdmin=false;
+
+        private string _recherche;
+        public string Recherche
+        {
+            get
+            {
+                return _recherche;
+            }
+
+            set
+            {
+                _recherche = value;NotifyPropertyChanged(Recherche);UpdateListeRecherche();
+            }
+        }
 
 
         private ObservableCollection<string> _listeCategorie;
@@ -142,10 +157,9 @@ namespace LaLaverieProject.ViewModel
         {
             if (_isUserAdmin)
             {
-                if (ListeBieres.Count() != 0)
-                    return true;
-                return false;
+                return _isRecetteEnabled;
             }
+
 
             return false;
         }
@@ -153,13 +167,12 @@ namespace LaLaverieProject.ViewModel
         private void OnRecetteAction(object obj)
         {
             RecetteWindow recette = new RecetteWindow(SelectedBiere);
-            recette.Show();
-            fenetre.Close();
+            recette.ShowDialog();
         }
 
         private bool CanExecuteHyperLink(object obj)
         {
-            return true;
+            return !_isUserAdmin;
         }
 
         private void OnHyperLinkAction(object obj)
@@ -221,7 +234,13 @@ namespace LaLaverieProject.ViewModel
         {
             ModifierBiereWindow edit = new ModifierBiereWindow(SelectedBiere,ListeCategorie);
             edit.ShowDialog();
-            
+
+            //fix pour la liste qui ne s'actualise pas toute seule lors d'une modif
+            string save = SelectedCategorie;
+            SelectedCategorie = ListeCategorie.First();
+            SelectedCategorie = save;
+
+
         }
 
         private bool CanExecuteDelete(object obj)
@@ -244,6 +263,8 @@ namespace LaLaverieProject.ViewModel
                 OnEditCommand.RaiseCanExecuteChanged();
                 _isDeleteEnabled = false;
                 OnDeleteCommand.RaiseCanExecuteChanged();
+                _isRecetteEnabled = false;
+                OnRecetteCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -258,6 +279,13 @@ namespace LaLaverieProject.ViewModel
             add.ShowDialog();
             ListeBieres.Add(add.ViewModel.BiereToAdd);
             ListeBieresFiltre.Add(add.ViewModel.BiereToAdd);
+
+            _isEditEnabled = true;
+            OnEditCommand.RaiseCanExecuteChanged();
+            _isDeleteEnabled = true;
+            OnDeleteCommand.RaiseCanExecuteChanged();
+            _isRecetteEnabled = true;
+            OnRecetteCommand.RaiseCanExecuteChanged();
         }
 
         private void UpdateListe()
@@ -273,6 +301,14 @@ namespace LaLaverieProject.ViewModel
             }
             
         }
-       
+
+        private void UpdateListeRecherche()
+        {
+            SelectedCategorie = ListeCategorie.First();
+            List<BiereModel> l = new List<BiereModel>(ListeBieres);
+            ListeBieresFiltre = new ObservableCollection<BiereModel>(l.Where(b => b.Nom.ToUpper().Contains(Recherche.ToUpper())));
+            
+        }
+
     }
 }

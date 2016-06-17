@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Background="{DynamicResource WindowBrush}"
         Icon="../Images/icon.png"
+        WindowStartupLocation="CenterScreen"
         Title="La Laverie - Connexion" MaxHeight="269" MaxWidth="600" MinHeight="269" MinWidth="600">
     <Grid>
         <Grid.RowDefinitions>

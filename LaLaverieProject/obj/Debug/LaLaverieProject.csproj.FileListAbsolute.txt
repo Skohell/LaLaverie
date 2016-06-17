@@ -239,3 +239,5 @@ C:\Users\Sebastien\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\LaLaveriePr
 C:\Users\Sebastien\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\LaLaverieProject.csproj.GenerateResource.Cache
 C:\Users\Sebastien\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\View\RecetteWindow.g.cs
 C:\Users\Sebastien\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\View\RecetteWindow.baml
+C:\Users\DarkFury\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\View\RecetteWindow.g.cs
+C:\Users\DarkFury\Source\Repos\LaLaverie\LaLaverieProject\obj\Debug\View\RecetteWindow.baml
