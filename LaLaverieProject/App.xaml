@@ -40,6 +40,11 @@
                 </Setter.Value>
             </Setter>
             <Setter Property="Margin" Value="0,80,0,0"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Segoe Print"/>

@@ -30,6 +30,7 @@ namespace LaLaverieProject.ViewModel
         public DelegateCommand OnSaveCommand { get; set; }
         public DelegateCommand OnHyperLinkCommand { get; set; }
         public DelegateCommand OnRecetteCommand { get; set; }
+        private bool _isRecetteEnabled = true;
 
         private bool _isUserAdmin=false;
 
@@ -142,10 +143,9 @@ namespace LaLaverieProject.ViewModel
         {
             if (_isUserAdmin)
             {
-                if (ListeBieres.Count() != 0)
-                    return true;
-                return false;
+                return _isRecetteEnabled;
             }
+
 
             return false;
         }
@@ -153,13 +153,12 @@ namespace LaLaverieProject.ViewModel
         private void OnRecetteAction(object obj)
         {
             RecetteWindow recette = new RecetteWindow(SelectedBiere);
-            recette.Show();
-            fenetre.Close();
+            recette.ShowDialog();
         }
 
         private bool CanExecuteHyperLink(object obj)
         {
-            return true;
+            return !_isUserAdmin;
         }
 
         private void OnHyperLinkAction(object obj)
@@ -244,6 +243,8 @@ namespace LaLaverieProject.ViewModel
                 OnEditCommand.RaiseCanExecuteChanged();
                 _isDeleteEnabled = false;
                 OnDeleteCommand.RaiseCanExecuteChanged();
+                _isRecetteEnabled = false;
+                OnRecetteCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -258,6 +259,13 @@ namespace LaLaverieProject.ViewModel
             add.ShowDialog();
             ListeBieres.Add(add.ViewModel.BiereToAdd);
             ListeBieresFiltre.Add(add.ViewModel.BiereToAdd);
+
+            _isEditEnabled = true;
+            OnEditCommand.RaiseCanExecuteChanged();
+            _isDeleteEnabled = true;
+            OnDeleteCommand.RaiseCanExecuteChanged();
+            _isRecetteEnabled = true;
+            OnRecetteCommand.RaiseCanExecuteChanged();
         }
 
         private void UpdateListe()
