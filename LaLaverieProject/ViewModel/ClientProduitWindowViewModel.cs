@@ -1,7 +1,6 @@
 ﻿using BusinessLayer.DAO;
 using LaLaverie.Model;
 using LaLaverieProject.Factory;
-
 using LaLaverieProject.View;
 using Library;
 using System;
