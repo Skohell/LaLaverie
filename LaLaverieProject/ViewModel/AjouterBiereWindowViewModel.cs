@@ -96,7 +96,10 @@ namespace LaLaverieProject.ViewModel
             file.ShowDialog();
 
             //On récupère le chemin de l'image choisie et on la copie dans un répertoire ou elle ne sera pas supprimée par mégarde
-            string path = String.Format(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + file.SafeFileName);
+            string path = String.Format(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)+"/Images/");
+            System.IO.Directory.CreateDirectory(path);
+            path = String.Format(path + file.SafeFileName);
+
             try
             {
                 System.IO.File.Copy(file.FileName, path);
