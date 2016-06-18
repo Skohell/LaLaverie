@@ -1,6 +1,7 @@
 # LaLaverieProject
 
-Projet en binome en DUT informatique - première année
+Projet en binome - DUT informatique - Première année
+
 Premier projet de C# IHM et MVVM
 
 Cette application propose un écran de connexion :
