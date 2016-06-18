@@ -66,6 +66,7 @@ namespace LaLaverieProject.ViewModel
             catch
             {
                 ListeClient.Add(new ClientModel("admin", "admin", 42, "admin", "admin", 42, "admin", "admin", 42));
+                ListeClient.Add(new ClientModel("user", "user", 42, "user", "user", 42, "user", "user", 42));
                 ClientDAO.SaveClient(ClientFactory.AllClientModelToClient(ListeClient));
                 ListeClient = ClientFactory.AllClientToClientModel(ClientDAO.LoadClient());
                 
