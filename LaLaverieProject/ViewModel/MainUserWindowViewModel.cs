@@ -3,22 +3,34 @@ using LaLaverie.Model;
 using LaLaverieProject.Factory;
 using LaLaverieProject.View;
 using Library;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LaLaverieProject.ViewModel
 {
+    /// <summary>
+    /// ViewModel de la View MainuserWindow
+    /// </summary>
     public class MainUserWindowViewModel : NotifyPropertyChangedBase
     {
+
+        #region Propriété
+        /// <summary>
+        /// Fenetre actuelle
+        /// </summary>
         MainUserWindow fenetre;
 
+        /// <summary>
+        /// Commande d'ajout d'un nouveau client
+        /// </summary>
         public DelegateCommand OnNewClientCommand { get; set; }
+        /// <summary>
+        /// Commande de connexion
+        /// </summary>
         public DelegateCommand OnConnexionCommand { get; set; }
 
+        /// <summary>
+        /// Liste des clients
+        /// </summary>
         private ObservableCollection<ClientModel> _listeClient;
         public ObservableCollection<ClientModel> ListeClient
         {
@@ -32,14 +44,21 @@ namespace LaLaverieProject.ViewModel
                 { _listeClient = value; NotifyPropertyChanged("ListeClient");}
             }
         }
+        #endregion
 
+        #region Constructeur
+        /// <summary>
+        /// Constructeur du ViewModel
+        /// </summary>
+        /// <param name="fenetre">Fenetre actuelle</param>
         public MainUserWindowViewModel(MainUserWindow fenetre)
         {
+            //Attribution des commandes
             OnNewClientCommand = new DelegateCommand(OnNewClientAction);
             OnConnexionCommand = new DelegateCommand(OnConnexionAction);
 
+            //On charge le fichier client ou on le créer avec un utilisateur admin à la première utilisation
             ListeClient = new ObservableCollection<ClientModel>();
-
             try
             {
                 ListeClient = ClientFactory.AllClientToClientModel(ClientDAO.LoadClient());
@@ -57,7 +76,13 @@ namespace LaLaverieProject.ViewModel
 
             
         }
+        #endregion
 
+        #region Actions
+        /// <summary>
+        /// Commande de connexion
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnConnexionAction(object obj)
         {
             MainConnexionWindow connexion = new MainConnexionWindow(ListeClient);
@@ -65,7 +90,10 @@ namespace LaLaverieProject.ViewModel
             fenetre.Close();
             
         }
-
+        /// <summary>
+        /// Commande de création d'un nouveau client
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnNewClientAction(object obj)
         {
             
@@ -74,5 +102,6 @@ namespace LaLaverieProject.ViewModel
            
             
         }
+        #endregion
     }
 }
