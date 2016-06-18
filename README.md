@@ -6,7 +6,7 @@ Premier projet de C# IHM et MVVM
 
 Cette application propose un écran de connexion :
   - Se connecter en "admin" "admin" pour avoir les fonctionnalités administrateur.
-  - Se créer un compte puis se connecter avec pour avoir l'affichage client.
+  - Se créer un compte ou se connecter en "user" "user" pour avoir l'affichage client.
 
 En tant que client il est possible de :
   - Se déconnecter et revenir à l'écran de connexion
