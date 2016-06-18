@@ -8,7 +8,7 @@
         Background="{DynamicResource WindowBrush}"
         Icon="../Images/icon.png"
         WindowStartupLocation="CenterScreen"
-        Title="La Laverie - Modifier bière" MaxHeight="800" MaxWidth="800"  MinHeight="800" MinWidth="800">
+        Title="La Laverie - Modifier Bière" MaxHeight="800" MaxWidth="800"  MinHeight="800" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="169"/>

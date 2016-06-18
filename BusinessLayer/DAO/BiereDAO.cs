@@ -1,23 +1,18 @@
 ﻿using BusinessLayer.Entities;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.DAO
 {
 
     /// <summary>
-    /// Classe permettant de charger et sauvegarder les listes de bières.
+    /// Classe permettant de charger et sauvegarder les bières.
     /// </summary>
     public static class BiereDAO
     {
-
+        #region Save/load dans le fichier binaire "bieres.bin"
         /// <summary>
         /// Enregistre dans un fichier bieres.bin la liste passée en argument
         /// </summary>
@@ -46,6 +41,6 @@ namespace BusinessLayer.DAO
             }
             return listeBiere;
         }
-
+        #endregion
     }
 }

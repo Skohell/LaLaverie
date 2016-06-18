@@ -8,7 +8,7 @@
        Background="{DynamicResource WindowBrush}"
         Icon="../Images/icon.png"
         WindowStartupLocation="CenterScreen"
-        Title="La Laverie - Profil" MaxHeight="800" MaxWidth="400"  MinHeight="800" MinWidth="400">
+        Title="La Laverie - Profil utilisateur" MaxHeight="800" MaxWidth="400"  MinHeight="800" MinWidth="400">
     <ScrollViewer VerticalScrollBarVisibility="Visible">
         <Grid>
             <Grid.RowDefinitions>

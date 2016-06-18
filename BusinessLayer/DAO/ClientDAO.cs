@@ -1,19 +1,22 @@
 ﻿using BusinessLayer.Entities;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.DAO
 {
+    /// <summary>
+    /// Classe permettant de charger et sauvegarder les clients.
+    /// </summary>
     public class ClientDAO
     {
- 
+
+        #region Save/load dans le fichier binaire "client.bin"
+        /// <summary>
+        /// Enregistre dans un fichier client.bin la liste passée en argument
+        /// </summary>
+        /// <param name="listeClient">Liste a enregistrer</param>
         public static void SaveClient(ObservableCollection<Client> listeClient)
         {
             IFormatter format = new BinaryFormatter();
@@ -23,7 +26,10 @@ namespace BusinessLayer.DAO
             }
         }
 
- 
+        /// <summary>
+        /// Charge depuis un fichier client.bin la liste de clients et la retourne
+        /// </summary>
+        /// <returns>liste de clients chargée</returns>
         public static ObservableCollection<Client> LoadClient()
         {
             ObservableCollection<Client> listeClient = new ObservableCollection<Client>();
@@ -35,6 +41,6 @@ namespace BusinessLayer.DAO
             }
             return listeClient;
         }
-
+        #endregion
     }
 }

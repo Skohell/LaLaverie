@@ -1,17 +1,16 @@
 ﻿using System;
-using Library;
 
 namespace LaLaverie.Model
 {
-
-    public class BiereModel : NotifyPropertyChangedBase
+    /// <summary>
+    /// Classe représentant une BiereModel
+    /// </summary>
+    public class BiereModel
     {
-
-
         #region Propriétés de la classe
 
         /// <summary>
-        /// Lien vers l'image de la bière
+        /// Chemin d'accès à l'image de la bière
         /// </summary>
         private string _imageUrl;
         public string ImageUrl
@@ -24,7 +23,6 @@ namespace LaLaverie.Model
             set
             {
                 _imageUrl = value;
-                NotifyPropertyChanged("ImageUrl");
             }
         }
 
@@ -45,7 +43,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _nom = value;
-                    NotifyPropertyChanged("Nom");
+
                 }
             }
         }
@@ -62,18 +60,12 @@ namespace LaLaverie.Model
             }
             set
             {
-                //if (!categories.Contains(value))
-                //    throw new Exception("Cette catégorie de bière n'existe pas.");
-                //else
-                //{
-                    _categorie = value;
-                    NotifyPropertyChanged("Categorie");
-                //}
+                _categorie = value;
             }
         }
 
         /// <summary>
-        /// Descritpion de la bière
+        /// Description de la bière
         /// </summary>
         private string _description;
         public string Description
@@ -89,13 +81,13 @@ namespace LaLaverie.Model
                 else
                 {
                     _description = value;
-                    NotifyPropertyChanged("Description");
+
                 }
             }
         }
 
         /// <summary>
-        /// Taux d'alcool de la bière
+        /// Taux d'alcool de la bière entre 0 et 100
         /// </summary>
         private float _alcool;
         public float Alcool
@@ -111,13 +103,13 @@ namespace LaLaverie.Model
                 else
                 {
                     _alcool = value;
-                    NotifyPropertyChanged("Alcool");
+
                 }
             }
         }
-        
+
         /// <summary>
-        /// Taux d'amertume de la bière
+        /// Taux d'amertume de la bière entre 0 et 10
         /// </summary>
         private int _amertume;
         public int Amertume
@@ -133,7 +125,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _amertume = value;
-                    NotifyPropertyChanged("Amertume");
+
                 }
             }
         }
@@ -155,7 +147,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _prix = value;
-                    NotifyPropertyChanged("Prix");
+
                 }
 
             }
@@ -175,10 +167,10 @@ namespace LaLaverie.Model
             {
                 if (!value.Equals(null))
                     _nbBouteille = value;
-                NotifyPropertyChanged("NbBouteille");
+                else
+                    _nbBouteille = 0;
             }
         }
-
 
         /// <summary>
         /// Empatage
@@ -197,7 +189,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _empatage = value;
-                    NotifyPropertyChanged("Empatage");
+
                 }
             }
         }
@@ -219,7 +211,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _brassin = value;
-                    NotifyPropertyChanged("Brassin");
+
                 }
             }
         }
@@ -241,7 +233,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _fermentation = value;
-                    NotifyPropertyChanged("Fermentation");
+
                 }
             }
         }
@@ -263,7 +255,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _embouteillage = value;
-                    NotifyPropertyChanged("Embouteillage");
+
                 }
             }
         }
@@ -285,15 +277,16 @@ namespace LaLaverie.Model
                 else
                 {
                     _conservation = value;
-                    NotifyPropertyChanged("Conservation");
+
                 }
             }
         }
+
         #endregion
 
-        #region Constructeur
+        #region Constructeurs
         /// <summary>
-        /// Constructeur d'une Bière
+        /// Constructeur d'une BièreModel
         /// </summary>
         /// <param name="nom">Nom de la bière</param>
         /// <param name="categorie">Catégorie de la bière</param>
@@ -303,8 +296,9 @@ namespace LaLaverie.Model
         /// <param name="prix">Prix de la bière</param>
         /// <param name="empatage">Description de l'empatage</param>
         /// <param name="brassin">Descritpion du brassin</param>
-        /// <param name="fermentation">Description de la frmentation de la bière</param>
+        /// <param name="fermentation">Description de la fermentation de la bière</param>
         /// <param name="embouteillage">Description de l'embouteillage de la bière</param>
+        /// <param name="image">Chemin d'accès à l'image de la bière</param>
         /// <param name="conservation">Description de la conservation de la bière</param>
         /// <param name="nbbouteille">Nombre de bouteilles en stock </param>
         public BiereModel(string nom, string categorie, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation, string image, int nbbouteille)
@@ -331,6 +325,9 @@ namespace LaLaverie.Model
             }
         }
 
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
         public BiereModel()
         {
         }
@@ -379,7 +376,7 @@ namespace LaLaverie.Model
         /// <returns>Affichage formatté de la quantité disponible</returns>
         public string AfficherNbBouteille()
         {
-            if(NbBouteille <= 0)
+            if (NbBouteille <= 0)
                 return string.Format("{0} bouteille", NbBouteille);
             else
                 return string.Format("{0} bouteilles", NbBouteille);

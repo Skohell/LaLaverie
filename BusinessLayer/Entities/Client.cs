@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Entities
 {
+    /// <summary>
+    /// Classe Serializable représentant un client
+    /// </summary>
     [Serializable]
     public class Client
     {
@@ -23,7 +22,7 @@ namespace BusinessLayer.Entities
             set
             {
                 if (value.Equals(null))
-                    throw new Exception("Le nom du client est invalide.");
+                    throw new Exception("Le nom du client ne peut être nul.");
                 else
                 {
                     _nom = value;
@@ -46,7 +45,7 @@ namespace BusinessLayer.Entities
             set
             {
                 if (value.Equals(null))
-                    throw new Exception("Le prenom du client est invalide.");
+                    throw new Exception("Le prenom du client ne peut etre nul.");
                 else
                 {
                     _prenom = value;
@@ -68,11 +67,13 @@ namespace BusinessLayer.Entities
             set
             {
                 if (value.Equals(null))
-                    throw new Exception("L'age du client est invalide.");
+                    throw new Exception("L'age du client ne peut etre nul.");
+                else if (value < 18)
+                    throw new Exception("Le client doit être majeur.");
                 else
                 {
                     _age = value;
-                    
+
                 }
             }
         }
@@ -206,7 +207,7 @@ namespace BusinessLayer.Entities
         }
         #endregion
 
-        #region Constructeur
+        #region Constructeurs
         /// <summary>
         /// Constructeur du client
         /// </summary>
@@ -244,11 +245,7 @@ namespace BusinessLayer.Entities
         #endregion
 
         #region Methodes
-        /// <summary>
-        /// Détermine si le client en création existe déjà
-        /// </summary>
-        /// <param name="client">Client existant potentiellement déjà</param>
-        /// <returns>True si la personne existe sinon false</returns>
+      
         public bool Equals(Client client)
         {
             if (this.CompareTo(client) == 0)
@@ -256,11 +253,7 @@ namespace BusinessLayer.Entities
             return false;
         }
 
-        /// <summary>
-        /// Compare deux clients existants
-        /// </summary>
-        /// <param name="client">Un autre client</param>
-        /// <returns>1, 0 ou -1</returns>
+      
         public int CompareTo(Client client)
         {
 
@@ -288,7 +281,9 @@ namespace BusinessLayer.Entities
             }
             return -1;
         }
+        #endregion
 
+        #region Affichages
         /// <summary>
         /// Affichage d'un client
         /// </summary>

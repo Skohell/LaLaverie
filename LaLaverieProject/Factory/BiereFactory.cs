@@ -1,16 +1,20 @@
 ﻿using BusinessLayer.Entities;
 using LaLaverie.Model;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LaLaverieProject.Factory
 {
+    /// <summary>
+    /// Classe de conversion de bière entity/model
+    /// </summary>
     public static class BiereFactory
     {
+        #region Transformation de bieres
+        /// <summary>
+        /// Transforme et retourne une Biere en BiereModel
+        /// </summary>
+        /// <param name="b"> Biere a transformer</param>
+        /// <returns>Biere transformée</returns>
         public static BiereModel BiereToBiereModel(Biere b)
         {
             return new BiereModel
@@ -30,6 +34,11 @@ namespace LaLaverieProject.Factory
             };
         }
 
+        /// <summary>
+        /// Transforme et retourne une BiereModel en Biere
+        /// </summary>
+        /// <param name="b"> Biere a transformer</param>
+        /// <returns>Biere transformée</returns>
         public static Biere BiereModelToBiere(BiereModel b)
         {
             return new Biere
@@ -48,8 +57,14 @@ namespace LaLaverieProject.Factory
                 NbBouteille = b.NbBouteille
             };
         }
+        #endregion
 
-
+        #region transformation de liste de bières
+        /// <summary>
+        /// Transforme et retourne une ObservableCollection de Biere en BiereModel
+        /// </summary>
+        /// <param name="b"> liste de Biere a transformer</param>
+        /// <returns>liste de Biere transformée</returns>
         public static ObservableCollection<BiereModel> AllBiereToBiereModel(ObservableCollection<Biere> list)
         {
             ObservableCollection<BiereModel> liste = new ObservableCollection<BiereModel>();
@@ -60,6 +75,11 @@ namespace LaLaverieProject.Factory
             return liste;
         }
 
+        /// <summary>
+        /// Transforme et retourne une ObservableCollection de BiereModel en Biere
+        /// </summary>
+        /// <param name="b"> liste de Biere a transformer</param>
+        /// <returns>liste de Biere transformée</returns>
         public static ObservableCollection<Biere> AllBiereModelToBiere(ObservableCollection<BiereModel> list)
         {
             ObservableCollection<Biere> liste = new ObservableCollection<Biere>();
@@ -69,5 +89,6 @@ namespace LaLaverieProject.Factory
             }
             return liste;
         }
+        #endregion
     }
 }

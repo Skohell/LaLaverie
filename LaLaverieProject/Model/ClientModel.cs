@@ -1,16 +1,13 @@
-﻿using Library;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace LaLaverie.Model
 {
-    public class ClientModel : NotifyPropertyChangedBase
+    /// <summary>
+    /// Classe représentant un ClientModel
+    /// </summary>
+   
+    public class ClientModel
     {
-
         #region Attributs et propriétés
         /// <summary>
         /// Nom du client
@@ -25,13 +22,13 @@ namespace LaLaverie.Model
             set
             {
                 if (value.Equals(null))
-                    throw new Exception("Le nom du client est invalide.");
+                    throw new Exception("Le nom du client ne peut être nul.");
                 else
                 {
                     _nom = value;
-                    NotifyPropertyChanged("Nom");
+
                 }
-                
+
             }
         }
 
@@ -48,11 +45,11 @@ namespace LaLaverie.Model
             set
             {
                 if (value.Equals(null))
-                    throw new Exception("Le prenom du client est invalide.");
+                    throw new Exception("Le prenom du client ne peut etre nul.");
                 else
                 {
                     _prenom = value;
-                    NotifyPropertyChanged("Prenom");
+
                 }
             }
         }
@@ -61,7 +58,7 @@ namespace LaLaverie.Model
         /// Age du client
         /// </summary>
         private int _age;
-        public int  Age
+        public int Age
         {
             get
             {
@@ -70,11 +67,13 @@ namespace LaLaverie.Model
             set
             {
                 if (value.Equals(null))
-                    throw new Exception("L'age du client est invalide.");
+                    throw new Exception("L'age du client ne peut etre nul.");
+                else if (value < 18)
+                    throw new Exception("Le client doit être majeur.");
                 else
                 {
                     _age = value;
-                    NotifyPropertyChanged("Age");
+
                 }
             }
         }
@@ -92,7 +91,7 @@ namespace LaLaverie.Model
             set
             {
                 _numeroRue = value;
-                NotifyPropertyChanged("NumeroRue");
+
             }
         }
 
@@ -113,9 +112,9 @@ namespace LaLaverie.Model
                 else
                 {
                     _rue = value;
-                    NotifyPropertyChanged("Rue");
+
                 }
-                    
+
             }
         }
 
@@ -136,7 +135,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _ville = value;
-                    NotifyPropertyChanged("Ville");
+
                 }
             }
         }
@@ -158,7 +157,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _codePostal = value;
-                    NotifyPropertyChanged("CodePostal");
+
                 }
             }
         }
@@ -180,7 +179,7 @@ namespace LaLaverie.Model
                 else
                 {
                     _mail = value;
-                    NotifyPropertyChanged("Mail");
+
                 }
             }
         }
@@ -202,15 +201,15 @@ namespace LaLaverie.Model
                 else
                 {
                     _motDePasse = value;
-                    NotifyPropertyChanged("MotDePasse");
+
                 }
             }
         }
         #endregion
 
-        #region Constructeur
+        #region Constructeurs
         /// <summary>
-        /// Constructeur du client
+        /// Constructeur du ClientModel
         /// </summary>
         /// <param name="nom">Nom du client</param>
         /// <param name="prenom">Prenom du client</param>
@@ -242,15 +241,11 @@ namespace LaLaverie.Model
 
         }
 
-        public ClientModel(){}
+        public ClientModel() { }
         #endregion
 
         #region Methodes
-        /// <summary>
-        /// Détermine si le client en création existe déjà
-        /// </summary>
-        /// <param name="client">Client existant potentiellement déjà</param>
-        /// <returns>True si la personne existe sinon false</returns>
+
         public bool Equals(ClientModel client)
         {
             if (this.CompareTo(client) == 0)
@@ -258,11 +253,7 @@ namespace LaLaverie.Model
             return false;
         }
 
-        /// <summary>
-        /// Compare deux clients existants
-        /// </summary>
-        /// <param name="client">Un autre client</param>
-        /// <returns>1, 0 ou -1</returns>
+
         public int CompareTo(ClientModel client)
         {
 
@@ -290,7 +281,9 @@ namespace LaLaverie.Model
             }
             return -1;
         }
+        #endregion
 
+        #region Affichages
         /// <summary>
         /// Affichage d'un client
         /// </summary>

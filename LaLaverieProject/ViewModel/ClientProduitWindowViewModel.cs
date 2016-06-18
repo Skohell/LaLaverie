@@ -8,32 +8,86 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace LaLaverieProject.ViewModel
 {
+    /// <summary>
+    /// ViewModel de la View ClientProduitWindow
+    /// </summary>
     public class ClientProduitWindowViewModel : NotifyPropertyChangedBase
     {
-        
+        #region Propriétés de la classe
+        /// <summary>
+        /// Client actuellement connecté
+        /// </summary>
         public ClientModel client { get; set; }
+
+        /// <summary>
+        /// Fenetre actuelle
+        /// </summary>
         ClientProduitWindow fenetre;
 
+        /// <summary>
+        /// Commande d'ajout d'une nouvelle bière
+        /// </summary>
         public DelegateCommand OnAddCommand { get; set; }
-        private bool _isEditEnabled = true;
+
+        /// <summary>
+        /// Commande de modification de la bière sélectionnée
+        /// </summary>
         public DelegateCommand OnEditCommand { get; set; }
-        private bool _isDeleteEnabled = true;
+        /// <summary>
+        /// Visibilité ou non de la commande de modification
+        /// </summary>
+        private bool _isEditEnabled = true;
+
+        /// <summary>
+        /// Commande de suppression de la bière sélectionnée
+        /// </summary>
         public DelegateCommand OnDeleteCommand { get; set; }
+        /// <summary>
+        /// Visibilité ou non de la commande de suppression
+        /// </summary>
+        private bool _isDeleteEnabled = true;
+        
+        /// <summary>
+        /// Commande de modification du profil client
+        /// </summary>
         public DelegateCommand OnModifyCommand { get; set; }
+
+        /// <summary>
+        /// Commande de déconnexion du client
+        /// </summary>
         public DelegateCommand OnLogoutCommand { get; set; }
+
+        /// <summary>
+        /// Commande de sauvegarde des changements effectués aux bières
+        /// </summary>
         public DelegateCommand OnSaveCommand { get; set; }
+
+        /// <summary>
+        /// Commande de redirection vers le site internet
+        /// </summary>
         public DelegateCommand OnHyperLinkCommand { get; set; }
+
+        /// <summary>
+        /// Commande d'affichage de la recette de la bière sélectionnée
+        /// </summary>
         public DelegateCommand OnRecetteCommand { get; set; }
+        /// <summary>
+        /// Visibilité ou non de la commande de recette
+        /// </summary>
         private bool _isRecetteEnabled = true;
 
+        /// <summary>
+        /// Etat administrateur ou non de la personne connectée
+        /// </summary>
         private bool _isUserAdmin=false;
 
+        /// <summary>
+        /// Chaine de caracteres entrée dans la barre de recherche
+        /// </summary>
         private string _recherche;
         public string Recherche
         {
@@ -48,7 +102,9 @@ namespace LaLaverieProject.ViewModel
             }
         }
 
-
+        /// <summary>
+        /// Liste des catégories de bière
+        /// </summary>
         private ObservableCollection<string> _listeCategorie;
         public ObservableCollection<string> ListeCategorie
         {
@@ -63,6 +119,9 @@ namespace LaLaverieProject.ViewModel
             }
         }
 
+        /// <summary>
+        /// Catégorie de bière actuellement sélectionnée
+        /// </summary>
         private string _selectedCategorie;
         public string SelectedCategorie
         {
@@ -70,7 +129,9 @@ namespace LaLaverieProject.ViewModel
             set { _selectedCategorie = value; UpdateListe(); NotifyPropertyChanged("ListeCategorie"); NotifyPropertyChanged("SelectedCategorie"); }
         }
 
-  
+        /// <summary>
+        /// Liste des Bières
+        /// </summary>
         private ObservableCollection<BiereModel> _listeBieres;
         public ObservableCollection<BiereModel> ListeBieres
         {
@@ -80,6 +141,19 @@ namespace LaLaverieProject.ViewModel
 
         }
 
+        /// <summary>
+        /// Biere actuellement sélectionnée
+        /// </summary>
+        private BiereModel _selectedBiere;
+        public BiereModel SelectedBiere
+        {
+            get { return _selectedBiere; }
+            set { _selectedBiere = value; NotifyPropertyChanged("ListeBieres"); NotifyPropertyChanged("SelectedBiere"); }
+        }
+
+        /// <summary>
+        /// Liste des Bières correspondant au filtre
+        /// </summary>
         private ObservableCollection<BiereModel> _listeBieresFiltre;
         public ObservableCollection<BiereModel> ListeBieresFiltre
         {
@@ -89,6 +163,9 @@ namespace LaLaverieProject.ViewModel
 
         }
 
+        /// <summary>
+        /// Liste des clients
+        /// </summary>
         private ObservableCollection<ClientModel> _listeClient;
         public ObservableCollection<ClientModel> ListeClient
         {
@@ -98,18 +175,19 @@ namespace LaLaverieProject.ViewModel
 
         }
 
-        private BiereModel _selectedBiere;
-        public BiereModel SelectedBiere
-        {
-            get { return _selectedBiere; }
-            set { _selectedBiere = value; NotifyPropertyChanged("ListeBieres"); NotifyPropertyChanged("SelectedBiere"); }
-        }
+        #endregion
 
-
+        #region Constructeur
+        /// <summary>
+        /// Constructeur du ViewModel
+        /// </summary>
+        /// <param name="client">Client actuellement connecté</param>
+        /// <param name="fenetre">fenetre actuelle</param>
+        /// <param name="ListeClient">Liste des clients</param>
         public ClientProduitWindowViewModel(ClientModel client, ClientProduitWindow fenetre, ObservableCollection<ClientModel> ListeClient)
         {
+            //On charge les bières à partir du fichier ou on le créer à la première utilisation
             ListeBieres = new ObservableCollection<BiereModel>();
-           
              try
              {
                  ListeBieres = BiereFactory.AllBiereToBiereModel(BiereDAO.LoadBieres());
@@ -119,25 +197,30 @@ namespace LaLaverieProject.ViewModel
                  ListeBieres.Add(new BiereModel("test", "test", "test",2,2,2, "test", "test", "test", "test", "test", "test",2));
                  BiereDAO.SaveBieres(BiereFactory.AllBiereModelToBiere(ListeBieres));
                  ListeBieres = BiereFactory.AllBiereToBiereModel(BiereDAO.LoadBieres());
-                ListeBieres.Clear();
+                 ListeBieres.Clear();
              }
+            //On donne cette liste complète à notre liste qui suit les filtres
             ListeBieresFiltre = new ObservableCollection<BiereModel>(ListeBieres);
 
-
+            //On récupère la liste des clients
             this.ListeClient = ListeClient;
             
+            //Attribution des catégories de bière, fixes pour le moment
             ListeCategorie = new ObservableCollection<string>();
             ListeCategorie.Add("Toutes");
             ListeCategorie.Add("Rafraîchissante");
             ListeCategorie.Add("Fruitée/Acidulée");
             ListeCategorie.Add("Riche/Corsée");
 
+            //Attribution des éléments sélectionnés par défaut
             if (ListeBieres.Count()>0)
                 SelectedBiere = ListeBieres.First();
             SelectedCategorie = ListeCategorie.First();
 
+            //On récupère le client actuellement connecté
             this.client = client;
 
+            //Attribution des commandes
             OnAddCommand = new DelegateCommand(OnAddAction, CanExecuteAdd);
             OnDeleteCommand = new DelegateCommand(OnDeleteAction, CanExecuteDelete);
             OnEditCommand = new DelegateCommand(OnEditAction, CanExecuteEdit);
@@ -147,12 +230,16 @@ namespace LaLaverieProject.ViewModel
             OnHyperLinkCommand = new DelegateCommand(OnHyperLinkAction, CanExecuteHyperLink);
             OnRecetteCommand = new DelegateCommand(OnRecetteAction, CanExecuteRecette);
 
+            //on récupère la fenetre actuelle
             this.fenetre = fenetre;
 
+            //On regarde si l'utilisateur connecté est admin
             if (client.Nom.Equals("admin") && client.MotDePasse.Equals("admin"))
                 _isUserAdmin = true;
         }
+        #endregion
 
+        #region Actions
         private bool CanExecuteRecette(object obj)
         {
             if (_isUserAdmin)
@@ -163,7 +250,10 @@ namespace LaLaverieProject.ViewModel
 
             return false;
         }
-
+        /// <summary>
+        /// Commande d'affichage de la recette
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnRecetteAction(object obj)
         {
             RecetteWindow recette = new RecetteWindow(SelectedBiere);
@@ -174,7 +264,10 @@ namespace LaLaverieProject.ViewModel
         {
             return !_isUserAdmin;
         }
-
+        /// <summary>
+        /// Commande de redirection vers le site internet
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnHyperLinkAction(object obj)
         {
             Process p = new Process();
@@ -188,7 +281,10 @@ namespace LaLaverieProject.ViewModel
                 return true;
             return false;
         }
-
+        /// <summary>
+        /// Commande de sauvegarde des bières
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnSaveAction(object obj)
         {
             BiereDAO.SaveBieres(BiereFactory.AllBiereModelToBiere(ListeBieres));
@@ -198,7 +294,10 @@ namespace LaLaverieProject.ViewModel
         {
             return true;
         }
-
+        /// <summary>
+        /// Commande de déconnexion
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnLogoutAction(object obj)
         {
             MainUserWindow home = new MainUserWindow();
@@ -215,7 +314,10 @@ namespace LaLaverieProject.ViewModel
             }
             return true;
         }
-
+        /// <summary>
+        /// Commande de modification du profil utilisateur
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnModifyAction(object obj)
         {
             ClientProfilWindow profil = new ClientProfilWindow(client);
@@ -229,7 +331,10 @@ namespace LaLaverieProject.ViewModel
                 return _isEditEnabled;
             return false;
         }
-
+        /// <summary>
+        /// Commande de modification de la bière sélectionnée
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnEditAction(object obj)
         {
             ModifierBiereWindow edit = new ModifierBiereWindow(SelectedBiere,ListeCategorie);
@@ -249,7 +354,10 @@ namespace LaLaverieProject.ViewModel
                 return _isDeleteEnabled;
             return false;
         }
-
+        /// <summary>
+        /// Commande de supression de la bière sélectionnée
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnDeleteAction(object obj)
         {
             MessageBox.Show(String.Format("La bière {0} a bien été supprimée !", SelectedBiere.Nom), "Suppression d'une bière");
@@ -272,7 +380,10 @@ namespace LaLaverieProject.ViewModel
         {
             return _isUserAdmin;
         }
-
+        /// <summary>
+        /// Commande d'ajout d'une nouvelle bière
+        /// </summary>
+        /// <param name="obj"></param>
         private void OnAddAction(object obj)
         {
             AjouterBiereWindow add = new AjouterBiereWindow(ListeCategorie);
@@ -287,7 +398,12 @@ namespace LaLaverieProject.ViewModel
             _isRecetteEnabled = true;
             OnRecetteCommand.RaiseCanExecuteChanged();
         }
+        #endregion
 
+        #region Méthodes
+        /// <summary>
+        /// Met à jour la liste de bière filtrée en fonction de la catégorie demandée
+        /// </summary>
         private void UpdateListe()
         {
             if (!SelectedCategorie.Equals("Toutes"))
@@ -302,6 +418,9 @@ namespace LaLaverieProject.ViewModel
             
         }
 
+        /// <summary>
+        /// Met à jour la liste de bière filtrée en fonction de la barre de recherche
+        /// </summary>
         private void UpdateListeRecherche()
         {
             SelectedCategorie = ListeCategorie.First();
@@ -309,6 +428,6 @@ namespace LaLaverieProject.ViewModel
             ListeBieresFiltre = new ObservableCollection<BiereModel>(l.Where(b => b.Nom.ToUpper().Contains(Recherche.ToUpper())));
             
         }
-
+        #endregion
     }
 }

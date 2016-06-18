@@ -56,3 +56,4 @@ C:\Users\Sebastien\Source\Repos\LaLaverie\BusinessLayer\obj\Debug\BusinessLayer.
 C:\Users\Sebastien\Source\Repos\LaLaverie\BusinessLayer\obj\Debug\BusinessLayer.csproj.GenerateResource.Cache
 C:\Users\Sebastien\Source\Repos\LaLaverie\BusinessLayer\obj\Debug\BusinessLayer.exe
 C:\Users\Sebastien\Source\Repos\LaLaverie\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\DarkFury\Source\Repos\LaLaverie\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache

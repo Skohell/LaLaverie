@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Entities
 {
     /// <summary>
-    /// Classe représentant une Bière
+    /// Classe Serializable représentant une Bière
     /// </summary>
-    /// 
-    
     [Serializable]
     public class Biere 
     {
-
         #region Propriétés de la classe
+
         /// <summary>
-        /// Lien vers l'image de la bière
+        /// Chemin d'accès à l'image de la bière
         /// </summary>
         private string _imageUrl;
         public string ImageUrl
@@ -66,19 +60,13 @@ namespace BusinessLayer.Entities
                 return _categorie;
             }
             set
-            {
-                //if (!categories.Contains(value))
-                //    throw new Exception("Cette catégorie de bière n'existe pas.");
-                //else
-                //{
+            {        
                 _categorie = value;
-             
-                //}
             }
         }
 
         /// <summary>
-        /// Descritpion de la bière
+        /// Description de la bière
         /// </summary>
         private string _description;
         public string Description
@@ -100,7 +88,7 @@ namespace BusinessLayer.Entities
         }
 
         /// <summary>
-        /// Taux d'alcool de la bière
+        /// Taux d'alcool de la bière entre 0 et 100
         /// </summary>
         private float _alcool;
         public float Alcool
@@ -122,7 +110,7 @@ namespace BusinessLayer.Entities
         }
 
         /// <summary>
-        /// Taux d'amertume de la bière
+        /// Taux d'amertume de la bière entre 0 et 10
         /// </summary>
         private int _amertume;
         public int Amertume
@@ -180,10 +168,10 @@ namespace BusinessLayer.Entities
             {
                 if (!value.Equals(null))
                     _nbBouteille = value;
-              
+                else
+                    _nbBouteille = 0;
             }
         }
-
 
         /// <summary>
         /// Empatage
@@ -295,12 +283,9 @@ namespace BusinessLayer.Entities
             }
         }
 
-
-
-
         #endregion
 
-        #region Constructeur
+        #region Constructeurs
         /// <summary>
         /// Constructeur d'une Bière
         /// </summary>
@@ -312,8 +297,9 @@ namespace BusinessLayer.Entities
         /// <param name="prix">Prix de la bière</param>
         /// <param name="empatage">Description de l'empatage</param>
         /// <param name="brassin">Descritpion du brassin</param>
-        /// <param name="fermentation">Description de la frmentation de la bière</param>
+        /// <param name="fermentation">Description de la fermentation de la bière</param>
         /// <param name="embouteillage">Description de l'embouteillage de la bière</param>
+        /// <param name="image">Chemin d'accès à l'image de la bière</param>
         /// <param name="conservation">Description de la conservation de la bière</param>
         /// <param name="nbbouteille">Nombre de bouteilles en stock </param>
         public Biere(string nom, string categorie, string description, float alcool, int amertume, float prix, string empatage, string brassin, string fermentation, string embouteillage, string conservation, string image, int nbbouteille)
@@ -340,6 +326,9 @@ namespace BusinessLayer.Entities
             }
         }
 
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
         public Biere()
         {
         }
