@@ -49,7 +49,7 @@ namespace LaLaverieProject.ViewModel
                 ListeClient.Add(new ClientModel("admin", "admin", 42, "admin", "admin", 42, "admin", "admin", 42));
                 ClientDAO.SaveClient(ClientFactory.AllClientModelToClient(ListeClient));
                 ListeClient = ClientFactory.AllClientToClientModel(ClientDAO.LoadClient());
-                ListeClient.Clear();
+                
             }
 
 

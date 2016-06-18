@@ -153,7 +153,7 @@ namespace BusinessLayer.Entities
             set
             {
                 if (!(value > 0 && value <= 99999))
-                    throw new Exception("Le code postal n'est pas correcte.");
+                    throw new Exception("Le code postal n'est pas correct.");
                 else
                 {
                     _codePostal = value;
