@@ -391,6 +391,7 @@ namespace LaLaverieProject.ViewModel
             add.ShowDialog();
             ListeBieres.Add(add.ViewModel.BiereToAdd);
             ListeBieresFiltre.Add(add.ViewModel.BiereToAdd);
+            SelectedBiere = ListeBieres.First();
 
             _isEditEnabled = true;
             OnEditCommand.RaiseCanExecuteChanged();
