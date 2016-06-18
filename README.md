@@ -14,6 +14,7 @@ En tant que client il est possible de :
   - Afficher les informations d'une bière en la sélectionnant dans la liste
   - Filtrer l'affichage de la liste des bières par catégorie
   - Filtrer l'affichage de la liste des bières dynamiquement en tapant dans une barre de recherche
+
 En tant qu'admin il est possible de :
   - Se déconnecter et revenir à l'écran de connexion
   - Afficher les informations d'une bière en la sélectionnant dans la liste
