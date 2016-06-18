@@ -194,10 +194,11 @@ namespace LaLaverieProject.ViewModel
              }
              catch
              {
-                 ListeBieres.Add(new BiereModel("test", "test", "test",2,2,2, "test", "test", "test", "test", "test", "test",2));
+                /* ListeBieres.Add(new BiereModel("test", "test", "test",2,2,2, "test", "test", "test", "test", "test", "test",2));
                  BiereDAO.SaveBieres(BiereFactory.AllBiereModelToBiere(ListeBieres));
                  ListeBieres = BiereFactory.AllBiereToBiereModel(BiereDAO.LoadBieres());
                  ListeBieres.Clear();
+                 */
              }
             //On donne cette liste complète à notre liste qui suit les filtres
             ListeBieresFiltre = new ObservableCollection<BiereModel>(ListeBieres);

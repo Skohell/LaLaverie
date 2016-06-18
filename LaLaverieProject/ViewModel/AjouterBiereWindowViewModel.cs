@@ -92,12 +92,19 @@ namespace LaLaverieProject.ViewModel
         {
             //Ouverture d'une fenetre de parcours de fichiers image
             OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Fichiers image (.png)|*.png|Fichiers image (.jpg)|.jpg";
+            file.Filter = "Fichiers image (.png)|*.png|Fichiers image (.jpg)|*.jpg";
             file.ShowDialog();
 
             //On récupère le chemin de l'image choisie et on la copie dans un répertoire ou elle ne sera pas supprimée par mégarde
             string path = String.Format(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + file.SafeFileName);
-            System.IO.File.Copy(file.FileName, path);
+            try
+            {
+                System.IO.File.Copy(file.FileName, path);
+            }
+            catch //Si on utilise deux fois une même image on évite l'exception mais on ne fait rien de plus, la bière prendra le même path en ImageUrl
+            {
+
+            }
 
             //Attribution de l'image a la bière
             BiereToAdd.ImageUrl = path;

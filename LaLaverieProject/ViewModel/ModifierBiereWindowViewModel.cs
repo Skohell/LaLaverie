@@ -104,7 +104,15 @@ namespace LaLaverieProject.ViewModel
             file.Filter = "Fichiers image (.png)|*.png|Fichiers image (.jpg)|*.jpg";
             file.ShowDialog();
             string path = String.Format(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + file.SafeFileName);
-            System.IO.File.Copy(file.FileName, path);
+            try
+            {
+                System.IO.File.Copy(file.FileName, path);
+            }
+            catch //Si on utilise deux fois la même image on évite l'exception mais on ne fait rien de plus, la bière prendra comme ImageUrl celle existante
+            {
+
+            }
+           
             BiereToEdit.ImageUrl = path;
         }
         #endregion
